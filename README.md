@@ -9,9 +9,8 @@ Gotta configure fancontrol/terminator/background(feh)/completion-case
 
 rofi-theme-selector
 
--------------
-# ADD USER and CONFIG
--------------
+# ADD USER AND CONFIG
+
 useradd -m -g users -G wheel <user> 
 passwd <user>
 sudo nano /etc/sudoers
@@ -21,9 +20,9 @@ sudo nano /etc/sudoers
 install nautilus(maybe) to get Adwaita-dark theme
 configure dark theme on lxappearance  
   
--------------
+
 # FANCONTROL
--------------
+  
 To config it:
 
 detect sensors
@@ -34,23 +33,20 @@ To manage it:
 systemctl stop fancontrol (enable, start)
 watch sensors
 
--------------
-# Set completion case:
--------------
+# SET COMPLETION IGNORE CASE:
+  
 sudo nano /etc/inputrc
 set completion-ignore-case on
 
--------------
 # XINPUT (mouse speed):
--------------
+  
 xinput
 xinput --list-props <ID>
 xinput --set-prop <ID> <key> <value>
 sudo xinput --set-prop 13 299 -0.8 (oq eu uso)
 
--------------
-BPWM MULTIPLAS-TELAS
--------------
+# BPWM MULTIPLAS-TELAS:
+  
 xrandr (para ver qual é o nome da tela)
 arandr (para configurar posicionamento)
 sudo nano ~/.config/bspwm/bspwmrc
@@ -58,9 +54,8 @@ Exemplo:
 bspc monitor HDMI-1 -d I II III IV VI VII
 bspc monitor HDMI-2 -d VIII IX X
 
--------------
-PACMAN MULTILIB:
--------------
+# PACMAN MULTILIB:
+  
 sudo nano /etc/pacman.conf
 uncomment:
 #[multilib]
@@ -70,13 +65,9 @@ uncomment:
 Include = /etc/pacman.d/mirrorlist
 
 pacman -Syu
-
------------------------------------------------------------------
-
-#! See the script file to know which packages are being installed
--------------
-PACKAGES:
--------------
+  
+# PACKAGES:
+  
 terminator (terminal)
 dmenu ou rofi (program launcher)
 ranger (file system on terminal)
@@ -100,10 +91,10 @@ arandr (monitor config GUI)
 ntfs-3g (to read ntfs files or windows files)
 numlockx (activate numlock)
 maim && xclip (printar tela)
--------------
-
--------------
-PROGRAMAS:
+  
+# PROGRAMAS:
+  
 ani-cli
 sweet cursor (configura com lxappearance)
 
+# See the script file to know which packages are being installed
