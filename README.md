@@ -23,7 +23,7 @@ rofi-theme-selector
 ```bash
 echo "set completion-ignore-case on" >> /etc/inputrc
 ```
-
+--
 **3.MULTILIB:**
 ```bash
 sudo nano /etc/pacman.conf
