@@ -10,12 +10,12 @@ sleep 2
 
 #MOVENDO CONFIG FILES
 
-rm ~/.config/bspwm/
+rm -r ~/.config/bspwm/
 mv ./bspwm ~/.config/
-rm ~/.config/sxhkd/
+rm -r ~/.config/sxhkd/
 mv ./sxhkd ~/.config/
 #mv ./i3 ~/.config/
-rm ~/.config/polybar/
+rm -r ~/.config/polybar/
 mv ./polybar ~/.config/
 mv ./pk/.myscript.sh ~/
 mv ./pk/.xinitrc ~/
