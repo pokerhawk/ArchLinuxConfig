@@ -16,7 +16,7 @@ Gotta configure fancontrol/terminator/background(feh)/completion-case
 ```bash
 rofi-theme-selector
 ```
--
+---
 **2.COMPLETION-CASE:**
 
 /etc/inputrc
