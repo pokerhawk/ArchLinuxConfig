@@ -17,8 +17,10 @@ passwd <user>
 sudo nano /etc/sudoers
   
 # LXAPPEARANCE
+  
 install nautilus(maybe) to get Adwaita-dark theme
 configure dark theme on lxappearance  
+  
 -------------
 # FANCONTROL
 -------------
