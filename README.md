@@ -8,10 +8,10 @@ Se quiser isntalar "bspwm" entra na pasta "scripts" e executa "bspwm-script.sh"
  
 Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
 
-# CONFIGURAÇÔES
+# CONFIGURAÇÕES
 
-Gotta configure fancontrol/terminator/background(feh)/completion-case
- 
+Apos a instalação configure algumas coisas:
+---
 **1.ROFI:**
 ```bash
 rofi-theme-selector
@@ -54,6 +54,11 @@ configure dark theme on lxappearance
 
 ---
 **6.FANCONTROL:**
+
+Após configurar copia o arquivo "fancontrol" dentro da pasta fancontrol e cola em /etc/:
+```bash
+cp </to/folder>/fancontrol/fancontrol /etc/fancontrol
+```
   
 To config it:
 ```bash
