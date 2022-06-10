@@ -5,7 +5,7 @@ sleep 2
 
 #cp/etc/X11/xinit/xinitrc ~/.xinitrc
 
-sudo pacman -S terminator rofi ranger htop polybar feh leafpad pulseaudio lxappearance compton radeontop ttf-liberation ffmpegthumbnailer xinput-gui gufw arandr
+sudo pacman -S terminator rofi ranger htop polybar feh leafpad pulseaudio lxappearance picom radeontop ttf-liberation ffmpegthumbnailer gufw arandr
 sleep 2
 
 #MOVENDO CONFIG FILES
@@ -23,6 +23,5 @@ mv ./pk/.xinitrc ~/
 #terminator | rofi | ranger
 #htop | polybar | feh
 #leafpad | pulseaudio | lxappearance
-#compton | radeontop | ttf-liberation
-#ffmpegthumbnailer | xinput-gui | gufw
-#arandr
+#picom | radeontop | ttf-liberation
+#ffmpegthumbnailer | gufw | arandr
