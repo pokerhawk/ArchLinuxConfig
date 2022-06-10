@@ -23,7 +23,7 @@ rofi-theme-selector
 ```bash
 echo "set completion-ignore-case on" >> /etc/inputrc
 ```
---
+---
 **3.MULTILIB:**
 ```bash
 sudo nano /etc/pacman.conf
@@ -38,20 +38,20 @@ and run:
 ```bash
 pacman -Syu
 ```
-
+---
 **4.ADD USER AND CONFIG:**
 ```bash
 useradd -m -g users -G wheel <user> 
 passwd <user>
 sudo nano /etc/sudoers
 ```
-
+---
 **5.LXAPPEARANCE:**
   
 install nautilus(maybe) to get Adwaita-dark theme
 
 configure dark theme on lxappearance  
-  
+---
 **6.FANCONTROL:**
   
 To config it:
@@ -65,7 +65,7 @@ To manage it:
 systemctl stop fancontrol (enable, start)
 watch sensors
 ```
-
+---
 **7.XINPUT (mouse speed):**
 ```bash
 xinput
@@ -73,7 +73,7 @@ xinput --list-props <ID>
 xinput --set-prop <ID> <key> <value>
 sudo xinput --set-prop 13 299 -0.8 (oq eu uso)
 ```
-
+---
 **8.BPWM MULTIPLAS-TELAS:**
 ```bash
 xrandr #para ver qual é o nome da tela
