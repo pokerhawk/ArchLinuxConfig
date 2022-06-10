@@ -3,7 +3,7 @@
 sudo pacman -S xorg xorg-xinit bspwm
 sleep 2
 
-cp/etc/X11/xinit/xinitrc ~/.xinitrc
+#cp/etc/X11/xinit/xinitrc ~/.xinitrc
 
 sudo pacman -S terminator rofi ranger htop polybar feh leafpad pulseaudio lxappearance compton radeontop ttf-liberation ffmpegthumbnailer xinput-gui gufw arandr
 sleep 2
