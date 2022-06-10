@@ -9,7 +9,30 @@ sudo pacman -S xorg xorg-xinit i3
 sleep 1
 
 cp ../xinit-myscript/i3/.xinitrc ~/.xinitrc
-cp ../xinit-myscript/.myscript.sh ~/.myscript.sh
+cat ../xinit-myscript/.myscript.sh
+echo "Você quer copiar esse arquivo .myscript.sh para /home? [Y/n] "
+read copia
+if [ $copia == "y" ] || [ $copia == "Y" ]
+then
+	cp ../xinit-myscript/.myscript.sh ~/.myscript.sh
+fi
+
+mkdir ~/.myscript.sh
+chmod +x ~/.myscript.sh
+echo "picom &" >> ~/.myscript.sh
+echo "polybar" >> ~/.myscript.sh
+echo "Você quer adicionar xinput? [Y/n]"
+read xinput
+if [ $xinput == "y" ]
+then
+	echo "xinput --set-prop 13 291 -1" >> ~/.myscript.sh
+fi
+echo "Você quer adicionar numlockx? [Y/n]"
+read numlockx
+if [ $numlockx == "y" ]
+then
+	echo "/usr/bin/numlockx on" >> ~/.myscript.sh
+fi
 
 sudo pacman -S terminator rofi htop ranger polybar feh leafpad pulseaudio pavucontrol picom ttf-liberation ffmpegthumbnailer maim xclip
 sudo pacman -S lxappearance
