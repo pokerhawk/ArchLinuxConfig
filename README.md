@@ -12,41 +12,40 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
 
 Gotta configure fancontrol/terminator/background(feh)/completion-case
  
-ROFI:
+**ROFI:**
 ```bash
 rofi-theme-selector
 ```
 
 COMPLETION-CASE:
+
+/etc/inputrc
 ```bash
-sudo nano /etc/inputrc
-set completion-ignore-case on
+echo "set completion-ignore-case on" >> /etc/inputrc
 ```
 
 MULTILIB:
-
+```bash
 sudo nano /etc/pacman.conf
-
+```
 uncomment:
 
 #[multilib]
 
 #Include = /etc/pacman.d/mirrorlist
 
-[multilib]
-
-Include = /etc/pacman.d/mirrorlist
-
+and run:
+```bash
 pacman -Syu
+```
 
 ADD USER AND CONFIG:
-
+```bash
 useradd -m -g users -G wheel <user> 
-
 passwd <user>
-
 sudo nano /etc/sudoers
-  
+```
+
 LXAPPEARANCE:
   
 install nautilus(maybe) to get Adwaita-dark theme
@@ -56,35 +55,31 @@ configure dark theme on lxappearance
 FANCONTROL:
   
 To config it:
-
+```bash
 detect sensors
-
 pwmconfig
+```
 
 To manage it:
-
+```bash
 systemctl stop fancontrol (enable, start)
-
 watch sensors
+```
 
 XINPUT (mouse speed):
-  
+```bash
 xinput
-
 xinput --list-props <ID>
-
 xinput --set-prop <ID> <key> <value>
-
 sudo xinput --set-prop 13 299 -0.8 (oq eu uso)
+```
 
 BPWM MULTIPLAS-TELAS:
-
-xrandr (para ver qual é o nome da tela)
-
-arandr (para configurar posicionamento)
-
+```bash
+xrandr #para ver qual é o nome da tela
+arandr #para configurar posicionamento
 sudo nano ~/.config/bspwm/bspwmrc
-
+```
 Exemplo:
 
 bspc monitor HDMI-1 -d I II III IV VI VII
