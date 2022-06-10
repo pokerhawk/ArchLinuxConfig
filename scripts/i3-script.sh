@@ -14,11 +14,9 @@ sleep 2
 
 #MOVENDO CONFIG FILES
 
-rm -r ~/.config/i3/
-mv ../i3 ~/.config/
+mv ../config/i3 ~/.config/
 
-rm -r ~/.config/polybar/
-mv ../polybar ~/.config/
+mv ../config/polybar ~/.config/
 
 #mv ../fancontrol/fancontrol /etc/
 

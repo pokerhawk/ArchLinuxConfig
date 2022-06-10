@@ -14,17 +14,15 @@ sleep 2
 
 #MOVENDO CONFIG FILES
 
-rm -r ~/.config/bspwm/
-mv ../config/bspwm ~/.config/
+mkdir ~/.config/bspwm
 cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
 echo "~/.myscript.sh" >> ~/.config/bspwm/bspwmrc
 
-rm -r ~/.config/sxhkd/
-mv ../config/sxhkd ~/.config/
+mkdir ~/.config/sxhkd
+mv ../config/sxhkd/sxhkdrc ~/.config/sxhkd
 
-rm -r ~/.config/polybar/
-mv ../polybar ~/.config/
+mv ../config/polybar ~/.config/
 
 #mv ../fancontrol/fancontrol /etc/
 
