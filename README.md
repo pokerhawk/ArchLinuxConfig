@@ -1,5 +1,9 @@
 # ArchLinuxConfig
 
+```bash
+git clone https://github.com/pokerhawk/ArchLinuxConfig.git
+```
+
 Se quiser isntalar "bspwm" entra na pasta "scripts" e executa "bspwm-script.sh"
  
 Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
@@ -8,13 +12,16 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
 
 Gotta configure fancontrol/terminator/background(feh)/completion-case
  
-ROFI: rofi-theme-selector
+ROFI:
+```bash
+rofi-theme-selector
+```
 
 COMPLETION-CASE:
-
+```bash
 sudo nano /etc/inputrc
-
 set completion-ignore-case on
+```
 
 MULTILIB:
 
