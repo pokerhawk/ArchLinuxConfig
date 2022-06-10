@@ -6,8 +6,8 @@ sleep 1
 sudo pacman -S xorg xorg-xinit i3
 sleep 1
 
-cp ./xinit-myscript/i3/.xinitrc ~/.xinitrc
-cp ./xinit-myscript/.myscript.sh ~/.myscript.sh
+cp ../xinit-myscript/i3/.xinitrc ~/.xinitrc
+cp ../xinit-myscript/.myscript.sh ~/.myscript.sh
 
 sudo pacman -S numlockx terminator rofi ranger htop polybar feh leafpad pulseaudio lxappearance picom radeontop ttf-liberation ffmpegthumbnailer gufw arandr
 sleep 2
@@ -15,12 +15,12 @@ sleep 2
 #MOVENDO CONFIG FILES
 
 rm -r ~/.config/i3/
-mv ./i3 ~/.config/
+mv ../i3 ~/.config/
 
 rm -r ~/.config/polybar/
-mv ./polybar ~/.config/
+mv ../polybar ~/.config/
 
-#mv ./fancontrol/fancontrol /etc/
+#mv ../fancontrol/fancontrol /etc/
 
 #INSTALANDO ESSAS PACKAGES:
 
