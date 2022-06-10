@@ -15,9 +15,12 @@ rofi-theme-selector
 useradd -m -g users -G wheel <user> 
 passwd <user>
 sudo nano /etc/sudoers
-
+  
+# LXAPPEARANCE
+install nautilus(maybe) to get Adwaita-dark theme
+configure dark theme on lxappearance  
 -------------
-# Fancontrol
+# FANCONTROL
 -------------
 To config it:
 
