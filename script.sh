@@ -10,9 +10,12 @@ sleep 2
 
 #MOVENDO CONFIG FILES
 
+rm ~/.config/bspwm/
 mv ./bspwm ~/.config/
+rm ~/.config/sxhkd/
 mv ./sxhkd ~/.config/
 #mv ./i3 ~/.config/
+rm ~/.config/polybar/
 mv ./polybar ~/.config/
 mv ./pk/.myscript.sh ~/
 mv ./pk/.xinitrc ~/
@@ -25,3 +28,5 @@ mv ./pk/.xinitrc ~/
 #leafpad | pulseaudio | lxappearance
 #picom | radeontop | ttf-liberation
 #ffmpegthumbnailer | gufw | arandr
+
+echo "!!see the README file for extra packages!!"
