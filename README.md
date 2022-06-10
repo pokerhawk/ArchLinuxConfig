@@ -12,19 +12,19 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
 
 Gotta configure fancontrol/terminator/background(feh)/completion-case
  
-**ROFI:**
+**1.ROFI:**
 ```bash
 rofi-theme-selector
 ```
 
-COMPLETION-CASE:
+**2.COMPLETION-CASE:**
 
 /etc/inputrc
 ```bash
 echo "set completion-ignore-case on" >> /etc/inputrc
 ```
 
-MULTILIB:
+**3.MULTILIB:**
 ```bash
 sudo nano /etc/pacman.conf
 ```
@@ -39,20 +39,20 @@ and run:
 pacman -Syu
 ```
 
-ADD USER AND CONFIG:
+**4.ADD USER AND CONFIG:**
 ```bash
 useradd -m -g users -G wheel <user> 
 passwd <user>
 sudo nano /etc/sudoers
 ```
 
-LXAPPEARANCE:
+**5.LXAPPEARANCE:**
   
 install nautilus(maybe) to get Adwaita-dark theme
 
 configure dark theme on lxappearance  
   
-FANCONTROL:
+**6.FANCONTROL:**
   
 To config it:
 ```bash
@@ -66,7 +66,7 @@ systemctl stop fancontrol (enable, start)
 watch sensors
 ```
 
-XINPUT (mouse speed):
+**7.XINPUT (mouse speed):**
 ```bash
 xinput
 xinput --list-props <ID>
@@ -74,13 +74,13 @@ xinput --set-prop <ID> <key> <value>
 sudo xinput --set-prop 13 299 -0.8 (oq eu uso)
 ```
 
-BPWM MULTIPLAS-TELAS:
+**8.BPWM MULTIPLAS-TELAS:**
 ```bash
 xrandr #para ver qual é o nome da tela
 arandr #para configurar posicionamento
 sudo nano ~/.config/bspwm/bspwmrc
 ```
-Exemplo:
+**Exemplo:**
 
 bspc monitor HDMI-1 -d I II III IV VI VII
 
