@@ -1,7 +1,7 @@
 # ArchLinuxConfig
 
-Se quiser isntalar "bspwm" entra na pasta "scripts" e executa "bspwm-script.sh"
-Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
+ Se quiser isntalar "bspwm" entra na pasta "scripts" e executa "bspwm-script.sh"
+ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
 
 Gotta configure fancontrol/terminator/background(feh)/completion-case
 
