@@ -61,6 +61,8 @@ mkdir ~/Pictures/
 mv ../kaylesideansty.jpg ~/Pictures/
 feh --bg-fill ~/Pictures/kaylesideansty.jpg
 
+cp -r ../Adwaita-dark /usr/share/themes/
+
 #mv ../fancontrol/fancontrol /etc/
 
 #INSTALANDO ESSAS PACKAGES:
