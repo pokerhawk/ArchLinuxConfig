@@ -118,6 +118,8 @@ leafpad > emacs > gedit (editor de texto)
 
 pulseaudio && pavucontrol (controlar audio)
 
+vlc && mpv(music player)
+
 lxappearance (configurar mouse sweet cursor)
 
 picom (old compton - dexa as paradas transparente)
@@ -139,6 +141,10 @@ ntfs-3g (to read ntfs files or windows files)
 numlockx (activate numlock)
 
 maim && xclip (printar tela)
+
+unrar (for .rar files "unrar x <file>")
+ 
+bc (calc)
   
 # PROGRAMAS:
   
