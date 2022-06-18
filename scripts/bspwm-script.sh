@@ -67,6 +67,8 @@ if [[ -f "/home/pk/.moc/config" ]]; then
 	echo "XTermTheme = transparent-background" >> ~/.moc/config
 fi
 sudo cp -r ../Adwaita-dark /usr/share/themes/
+#PICOM (blur background)
+cp -r ../config/picom ~/.config
 
 #mv ../fancontrol/fancontrol /etc/
 
