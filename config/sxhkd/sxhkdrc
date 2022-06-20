@@ -126,10 +126,10 @@ super + {h,k,j,l}
 
 # print screen
 Print
-	maim "/home/pk/Pictures/$(date).png"
+	maim -o "/home/pk/Pictures/$(date).png"
 
 super + shift + s
-	maim --select | xclip -selection clipboard -t image/png
+	maim -o --select | xclip -selection clipboard -t image/png
 
 #lock screen
 super + ctrl + p
