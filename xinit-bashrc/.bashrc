@@ -20,4 +20,4 @@
 alias ls='ls --color=auto'
 #PS1=' \u@\h in \W \n -\$ '
 PS1='\[\e[35m\]╭─(\u\[\e[00m\]@\[\e[35m\]\h)\[\e[00m\] at\[\e[34m\] \W/\e[35m\]\n╰─\$\[\e[00m\] '
-neofetch
+neofetch | lolcat

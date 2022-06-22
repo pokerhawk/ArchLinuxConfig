@@ -8,23 +8,9 @@ Se quiser isntalar "bspwm" entra na pasta "scripts" e executa "bspwm-script.sh"
  
 Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh"
 
-# CONFIGURAÇÕES
+# CONFIGURAÇÕES APOS INSTALAÇÃO
 
-Apos a instalação configure algumas coisas:
----
-**1.ROFI:**
-```bash
-rofi-theme-selector
-```
----
-**2.COMPLETION-CASE:**
-
-/etc/inputrc
-```bash
-echo "set completion-ignore-case on" >> /etc/inputrc
-```
----
-**3.MULTILIB:**
+**1.MULTILIB:**
 ```bash
 sudo nano /etc/pacman.conf
 ```
@@ -39,21 +25,32 @@ and run:
 pacman -Syu
 ```
 ---
-**4.ADD USER AND CONFIG:**
+**2.SUDOERS AND ADD USERS**
+
+To create user and set password
+
 ```bash
 useradd -m -g users -G wheel <user> 
 passwd <user>
+```
+
+then:
+
+```bash
 sudo nano /etc/sudoers
 ```
----
-**5.LXAPPEARANCE:**
-  
-install nautilus(maybe) to get Adwaita-dark theme
 
-configure dark theme on lxappearance  
+Uncomment:
+
+#%wheel ALL=(ALL:ALL) ALL
 
 ---
-**6.FANCONTROL:**
+**3.ROFI:**
+```bash
+rofi-theme-selector
+```
+---
+**4.FANCONTROL:**
 
 Após configurar copia o arquivo "fancontrol" dentro da pasta fancontrol e cola em /etc/:
 ```bash
@@ -62,25 +59,27 @@ cp </to/folder>/fancontrol/fancontrol /etc/fancontrol
   
 To config it:
 ```bash
-detect sensors
-pwmconfig
+sudo detect sensors
+sudo pwmconfig
 ```
 
 To manage it:
 ```bash
-systemctl stop fancontrol (enable, start)
+sudo systemctl stop fancontrol (enable, start)
 watch sensors
 ```
 ---
-**7.XINPUT (mouse speed):**
+**5.XINPUT (mouse speed and invert-Y):**
 ```bash
 xinput
 xinput --list-props <ID>
 xinput --set-prop <ID> <key> <value>
+xinput set-prop 13 151 1 0 0 0 -1 1 0 0 1
+xinput set-prop 13 151 1 0 0 0 1 0 0 0 1
 sudo xinput --set-prop 13 299 -0.8 (oq eu uso)
 ```
 ---
-**8.BPWM MULTIPLAS-TELAS:**
+**6.BPWM MULTIPLAS-TELAS:**
 ```bash
 xrandr #para ver qual é o nome da tela
 arandr #para configurar posicionamento
@@ -91,10 +90,26 @@ sudo nano ~/.config/bspwm/bspwmrc
 bspc monitor HDMI-1 -d I II III IV VI VII
 
 bspc monitor HDMI-2 -d VIII IX X
+
+---
+**7.PICOM**
+
+Do:
+
+```bash
+diff ~/.config/picom/picom.conf ~/Downloads/ArchLinuxConfig/config/picom/picom.conf
+```
+
+See the difference and fix it.
+
+---
+**8.LXAPPEARANCE:**
+  
+Get Adwaita-dark theme, configure dark theme on lxappearance then come back here and fix this.  
   
 # PACKAGES:
   
-terminator (terminal)
+terminator ou Alacritty (terminal)
 
 dmenu ou rofi (program launcher)
 
@@ -110,9 +125,7 @@ polybar (akela barra de cima e embaixo)
 
 pcmanfm (program for file system like nautilus)
 
-feh (imager viewer/background wallpaper)
-
-nitrogen (wallpapager)
+feh or nitrogen (imager viewer/background wallpaper)
 
 leafpad > emacs > gedit (editor de texto)
 
@@ -143,8 +156,12 @@ numlockx (activate numlock)
 maim && xclip (printar tela)
 
 unrar (for .rar files "unrar x <file>")
- 
-bc (calc)
+
+cava (audio thingy)
+
+openssh && sshfs (to remote access and mount remote-ssh devices)
+
+net-tools && gnu-netcat (tools pra internet)
   
 # PROGRAMAS:
   
@@ -152,5 +169,6 @@ ani-cli
 
 sweet cursor (configura com lxappearance)
 
-# See the script file to know which packages are being installed
+Adwaita-dark theme
+
 ---

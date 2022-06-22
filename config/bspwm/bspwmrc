@@ -42,4 +42,8 @@ bspc rule -a Steam state=floating rectangle=1600x900+160+90
 #bspc rule -a terminator -o desktop='^10' state=floating rectangle 100x100+0+0 sticky=on
 
 ~/.fehbg
-~/.myscript.sh
+polybar
+xinput --set-prop 13 291 -1
+/usr/bin/numlockx on
+picom --experimental-backends
+xsetroot -cursor_name Sweet-cursors

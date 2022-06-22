@@ -197,7 +197,7 @@ client.placeholder #000000 #0c0c0c #80FFF9 #000000
 client.background #2B2C2B
 
 exec feh --bg-fill ~/Pictures/kaylesideansty.jpg
-exec compton
+exec picom
 exec xinput --set-prop 13 299 -1
 exec numlockx
 
