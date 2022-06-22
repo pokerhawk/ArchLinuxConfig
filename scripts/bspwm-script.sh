@@ -15,6 +15,8 @@ sudo pacman -S nautilus
 sudo pacman -S pacmanfm gvfs
 sudo pacman -S numlockx
 sudo pacman -S gufw
+sudo pacman -S lolcat
+
 clear
 echo "arandr é para configurar posição dos monitores"
 sudo pacman -S arandr
