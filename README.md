@@ -59,7 +59,7 @@ cp </to/folder>/fancontrol/fancontrol /etc/fancontrol
   
 To config it:
 ```bash
-sudo detect sensors
+sudo sensors-detect
 sudo pwmconfig
 ```
 
