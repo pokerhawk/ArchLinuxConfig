@@ -72,7 +72,9 @@ feh --bg-fill ~/Pictures/kaylesideansty.jpg
 if [[ -f "/home/pk/.moc/config" ]]; then
 	echo "XTermTheme = transparent-background" >> ~/.moc/config
 fi
+echo "COPIANDO ADWAITA-DARK THEM AND SWEET-CURSORS TO /usr/share/"
 sudo cp -r ../Adwaita-dark /usr/share/themes/
+sudo cp -r ../Sweet-cursors /usr/share/icons/
 
 #PICOM (blur background)
 
