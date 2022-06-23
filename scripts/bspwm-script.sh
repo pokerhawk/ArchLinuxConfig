@@ -94,6 +94,11 @@ if [ $bashrc == "y" ]||[ $bashrc == "Y" ]; then
 	cp ../xinit-bashrc/.bashrc ~/
 fi
 
+#INSTALLING LUTRIS ESSENTIALS
+
+echo "INSTALANDO PACOTES ESSENCIAIS PARA LUTRIS"
+sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+
 #FIM
 
 echo && echo && echo && echo && echo && echo
