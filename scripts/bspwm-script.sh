@@ -3,31 +3,44 @@
 # INSTALANDO WINDOW MANAGER
 
 sudo pacman -Syu
+echo "INSTALLING XORG/-XINIT/XSETROOT BSPWM SXHKD"
 sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd
 
 # INSTALANDO PACKAGES
-
-sudo pacman -S terminator rofi bpytop htop ranger polybar feh leafpad pavucontrol picom ttf-liberation mocp ffmpegthumbnailer maim xclip
-sudo pacman -S pulseaudio
+echo "INSTALLING TERMINATOR"
+sudo pacman -S terminator
+sudo pacman -S rofi bpytop htop ranger polybar feh leafpad picom ttf-liberation ffmpegthumbnailer maim xclip
+echo "INSTALLING PULSEAUDIO AND PAVUCONTROL"
+sudo pacman -S pulseaudio pavucontrol
+echo "INSTALLING LXAPPEARANCE"
 sudo pacman -S lxappearance
+echo "INSTALLING RADEONTOP"
 sudo pacman -S radeontop
+echo "INSTALLING NAUTILUS"
 sudo pacman -S nautilus
+echo "INSTALLING PACMANFM AND GVFS"
 sudo pacman -S pacmanfm gvfs
+echo "INSTALLING NUMLOCKX"
 sudo pacman -S numlockx
-sudo pacman -S gufw
+echo "INSTALLING UFW AND GUFW"
+sudo pacman -S ufw gufw
+echo "INSTALLING LOLCAT"
 sudo pacman -S lolcat
 
 clear
+echo "INSTALLING ARAND"
 echo "arandr é para configurar posição dos monitores"
 sudo pacman -S arandr
+echo "INSTALLING NTFS PARA LER WINDOWS FILES"
 sudo pacman -S ntfs-3g
+echo "INSTALLING FIREFOX"
 sudo pacman -S firefox
 clear
 sleep 1
 
 # MOVENDO XINIT
 
-cp ../xinit-myscript/bspwm/.xinitrc ~/.xinitrc
+cp ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
 
 #BSPWM
 
@@ -44,17 +57,18 @@ fi
 #SXHKD
 
 mkdir ~/.config/sxhkd
-mv ../config/sxhkd/sxhkdrc ~/.config/sxhkd
+cp ../config/sxhkd/sxhkdrc ~/.config/sxhkd
 
 #POLYBAR
 
-mv ../config/polybar ~/.config/
+cp -r ../config/polybar ~/.config/
 
-#WALLPAPER E THEME
+#WALLPAPER, THEME AND PICOM ON MOCP
 
 mkdir ~/Pictures/
-mv ../kaylesideansty.jpg ~/Pictures/
+cp ../kaylesideansty.jpg ~/Pictures/
 feh --bg-fill ~/Pictures/kaylesideansty.jpg
+
 if [[ -f "/home/pk/.moc/config" ]]; then
 	echo "XTermTheme = transparent-background" >> ~/.moc/config
 fi
@@ -66,7 +80,7 @@ cp -r ../config/picom ~/.config
 
 #ADICIONANDO IGNORE-CASE
 
-echo "set completion-ignore-case on" >> /etc/inputrc
+sudo echo "set completion-ignore-case on" >> /etc/inputrc
 
 #BASHRC personalizado
 
@@ -74,8 +88,8 @@ clear
 cat ../xinit-bashrc/.bashrc
 echo "bashrc personalizado? [Y/n]"
 read bashrc
-if [ $bashrc == "y" ] | [ $bashrc == "Y" ]; then
-cp ../xinit-bashrc/.bashrc ~/
+if [ $bashrc == "y" ]||[ $bashrc == "Y" ]; then
+	cp ../xinit-bashrc/.bashrc ~/
 fi
 
 #FIM
