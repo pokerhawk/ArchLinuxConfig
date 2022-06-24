@@ -5,34 +5,47 @@
 sudo pacman -Syu
 echo "INSTALLING XORG/-XINIT/XSETROOT BSPWM SXHKD"
 sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd
+clear
 
 # INSTALANDO PACKAGES
+
 echo "INSTALLING TERMINATOR"
 sudo pacman -S terminator
-sudo pacman -S rofi bpytop htop ranger polybar feh leafpad picom ttf-liberation ffmpegthumbnailer maim xclip
+clear
+echo "INSTALANDO PACK DOS ESSENCIAIS"
+sudo pacman -S git nano rofi bpytop htop ranger polybar feh leafpad picom ttf-liberation ffmpegthumbnailer maim xclip
+clear
 echo "INSTALLING PULSEAUDIO AND PAVUCONTROL"
 sudo pacman -S pulseaudio pavucontrol
+clear
 echo "INSTALLING LXAPPEARANCE"
 sudo pacman -S lxappearance
+clear
 echo "INSTALLING RADEONTOP"
 sudo pacman -S radeontop
+clear
 echo "INSTALLING NAUTILUS"
 sudo pacman -S nautilus
+clear
 echo "INSTALLING PACMANFM AND GVFS"
 sudo pacman -S pacmanfm gvfs
+clear
 echo "INSTALLING NUMLOCKX"
 sudo pacman -S numlockx
+clear
 echo "INSTALLING UFW AND GUFW"
 sudo pacman -S ufw gufw
+clear
 echo "INSTALLING LOLCAT"
 sudo pacman -S lolcat
-
 clear
 echo "INSTALLING ARAND"
 echo "arandr é para configurar posição dos monitores"
 sudo pacman -S arandr
+clear
 echo "INSTALLING NTFS PARA LER WINDOWS FILES"
 sudo pacman -S ntfs-3g
+clear
 echo "INSTALLING FIREFOX"
 sudo pacman -S firefox
 clear
@@ -69,7 +82,9 @@ mkdir ~/Pictures/
 cp ../kaylesideansty.jpg ~/Pictures/
 feh --bg-fill ~/Pictures/kaylesideansty.jpg
 
+echo "MOCP TRANSPARENTE // SÓ FAZ SE MOCP ESTIVER INSTALADO"
 if [[ -f "/home/pk/.moc/config" ]]; then
+	cp /usr/share/doc/moc/config.example ~/.moc/config
 	echo "XTermTheme = transparent-background" >> ~/.moc/config
 fi
 echo "COPIANDO ADWAITA-DARK THEM AND SWEET-CURSORS TO /usr/share/"
