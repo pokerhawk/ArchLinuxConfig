@@ -13,7 +13,7 @@ echo "INSTALLING TERMINATOR"
 sudo pacman -S terminator
 clear
 echo "INSTALANDO PACK DOS ESSENCIAIS"
-sudo pacman -S git nano rofi bpytop htop ranger polybar feh leafpad picom ttf-liberation ffmpegthumbnailer maim xclip
+sudo pacman -S git nano rofi bpytop htop ranger polybar feh leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock
 clear
 echo "INSTALLING PULSEAUDIO AND PAVUCONTROL"
 sudo pacman -S pulseaudio pavucontrol

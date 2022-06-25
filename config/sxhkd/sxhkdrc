@@ -133,4 +133,4 @@ super + shift + s
 
 #lock screen
 super + ctrl + p
-	i3lock -i ~/Pictures/screenlock.png
+	slock
