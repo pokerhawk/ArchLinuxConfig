@@ -95,7 +95,7 @@ bspc monitor HDMI-1 -d I II III IV VI VII
 bspc monitor HDMI-2 -d VIII IX X 
 
 ---
-**7.MOCP and YAY(AUR) INSTALL:**
+**7.YAY(AUR) and MOCP INSTALL:**
 
 First you need YAY:
 ```bash
@@ -107,7 +107,7 @@ sudo pacman -U file.tar
 then you can install MOCP:
 ```bash
 yay -S moc-pulse
-sudo pacman -S alsa-utils
+sudo pacman -S alsa-utils pulseaudio-alsa
 ```
 config the file to have transparent background with:
 ```bash
