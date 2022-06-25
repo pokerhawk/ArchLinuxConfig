@@ -114,6 +114,22 @@ cp /usr/share/doc/moc/config.example ~/.moc/config
 echo "XTermTheme = transparent-background" >> ~/.moc/config
 ```
 ---
+**6.NANO SYNTAX HIGHLIGHTING:**
+
+nano-syntax-highlighting should be installed, if not do:
+```bash
+sudo pacman -S nano-syntax-highlighting
+```
+then you go onto:
+```bash
+sudo nano /etc/nanorc
+```
+and uncomment the following line:
+```bash
+## To include most of the existing syntax definitions, you can do:
+# include "/usr/share/nano/*.nanorc"
+```
+---
 
 # PACKAGES:
   
