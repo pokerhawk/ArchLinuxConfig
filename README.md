@@ -94,6 +94,26 @@ bspc monitor HDMI-1 -d I II III IV VI VII
 bspc monitor HDMI-2 -d VIII IX X 
 
 ---
+**6.MOCP and YAY(AUR) INSTALL:**
+
+First you need YAY:
+```bash
+sudo pacman -S git go
+git clone https://aur.archlinux.org/yay.git
+makepkg -si
+sudo pacman -U file.tar
+```
+then you can install MOCP:
+```bash
+yay -S moc-pulse
+sudo pacman -S alsa-utils
+```
+config the file to have transparent background with:
+```bash
+cp /usr/share/doc/moc/config.example ~/.moc/config
+echo "XTermTheme = transparent-background" >> ~/.moc/config
+```
+---
 
 # PACKAGES:
   
