@@ -57,7 +57,7 @@ cp ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
 
 #BSPWM
 
-mkdir ~/.config/bspwm
+sudo mkdir ~/.config/bspwm
 echo "Copiar arquivo bspwm de /usr/share/doc/bspwm/example? ou utilizar arquivo personalizado? [copia/pers]"
 read bspwmconfig
 if [ $bspwmconfig == "copia" ]; then
@@ -70,11 +70,13 @@ fi
 #SXHKD
 
 mkdir ~/.config/sxhkd
-cp ../config/sxhkd/sxhkdrc ~/.config/sxhkd
+cp -r ../config/sxhkd/sxhkdrc ~/.config/sxhkd
 
 #POLYBAR
 
-cp -r ../config/polybar ~/.config/
+mkdir ~/.config/polybar
+cp ../config/polybar/config.ini ~/.config/polybar
+cp ../config/polybar/launch.sh ~/.config/polybar
 
 #WALLPAPER, THEME AND PICOM ON MOCP
 
