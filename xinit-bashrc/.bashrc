@@ -2,6 +2,10 @@
 # ~/.bashrc
 #
 
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	startx
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -15,7 +19,6 @@
 #\@	current time 12-hour hh:mm:ss am/pm
 #\u	username of current user
 #\w	path to current working directory
-
 
 alias ls='ls --color=auto'
 #PS1=' \u@\h in \W \n -\$ '
