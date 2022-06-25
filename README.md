@@ -89,23 +89,7 @@ sudo nano ~/.config/bspwm/bspwmrc
 
 bspc monitor HDMI-1 -d I II III IV VI VII
 
-bspc monitor HDMI-2 -d VIII IX X
-
----
-**7.PICOM**
-
-Do:
-
-```bash
-diff ~/.config/picom/picom.conf ~/Downloads/ArchLinuxConfig/config/picom/picom.conf
-```
-
-See the difference and fix it.
-
----
-**8.LXAPPEARANCE:**
-  
-Get Adwaita-dark theme, configure dark theme on lxappearance then come back here and fix this.  
+bspc monitor HDMI-2 -d VIII IX X 
   
 # PACKAGES:
   
