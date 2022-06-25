@@ -90,7 +90,9 @@ sudo nano ~/.config/bspwm/bspwmrc
 bspc monitor HDMI-1 -d I II III IV VI VII
 
 bspc monitor HDMI-2 -d VIII IX X 
-  
+
+---
+
 # PACKAGES:
   
 terminator ou Alacritty (terminal)
