@@ -86,6 +86,7 @@ sudo xinput --set-prop 13 299 -0.8 (oq eu uso)
 xrandr #para ver qual é o nome da tela
 arandr #para configurar posicionamento
 sudo nano ~/.config/bspwm/bspwmrc
+xprop #para ver spec de um app
 ```
 **Exemplo:**
 
