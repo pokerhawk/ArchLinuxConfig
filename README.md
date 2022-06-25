@@ -94,7 +94,7 @@ bspc monitor HDMI-1 -d I II III IV VI VII
 bspc monitor HDMI-2 -d VIII IX X 
 
 ---
-**6.MOCP and YAY(AUR) INSTALL:**
+**7.MOCP and YAY(AUR) INSTALL:**
 
 First you need YAY:
 ```bash
@@ -121,7 +121,7 @@ nano ~/.moc/config
 #StartInMusicDir = no
 ```
 ---
-**6.NANO SYNTAX HIGHLIGHTING:**
+**8.NANO SYNTAX HIGHLIGHTING:**
 
 nano-syntax-highlighting should be installed, if not do:
 ```bash
@@ -137,7 +137,6 @@ and uncomment the following line:
 # include "/usr/share/nano/*.nanorc"
 ```
 ---
-
 # PACKAGES:
   
 terminator ou Alacritty (terminal)
