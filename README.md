@@ -113,6 +113,13 @@ config the file to have transparent background with:
 cp /usr/share/doc/moc/config.example ~/.moc/config
 echo "XTermTheme = transparent-background" >> ~/.moc/config
 ```
+if you want MOCP to start on a specific directory:
+```bash
+nano ~/.moc/config
+##uncomment these lines:
+#MusicDir = /path/to/music/folder
+#StartInMusicDir = no
+```
 ---
 **6.NANO SYNTAX HIGHLIGHTING:**
 
