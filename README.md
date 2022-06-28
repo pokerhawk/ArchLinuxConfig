@@ -12,11 +12,14 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh" // ##D
 
 # CONFIGURAÇÕES APOS INSTALAÇÃO
 
-**1.MULTILIB:**
+**1.MULTILIB AND DRIVES:**
 ```bash
+sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 sudo nano /etc/pacman.conf
 ```
-uncomment:
+NOTE: for all https://github.com/lutris/docs/blob/master/InstallingDrivers.md
+
+then uncomment:
 
 #[multilib]
 
