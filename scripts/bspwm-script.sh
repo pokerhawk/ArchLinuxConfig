@@ -13,7 +13,7 @@ echo "INSTALLING TERMINATOR"
 sudo pacman -S terminator
 clear
 echo "INSTALANDO PACK DOS ESSENCIAIS"
-sudo pacman -S git nano rofi bpytop htop ranger polybar feh leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock
+sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock
 clear
 echo "INSTALLING SYNTAX HIGHLIGHTER(NOT NEEDED)"
 sudo pacman -S nano-syntax-highlighting
