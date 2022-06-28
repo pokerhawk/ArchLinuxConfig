@@ -14,10 +14,10 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh" // ##D
 
 **1.MULTILIB AND DRIVES:**
 ```bash
-sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 sudo nano /etc/pacman.conf
+sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 ```
-NOTE: for all https://github.com/lutris/docs/blob/master/InstallingDrivers.md
+NOTE: for all drivers https://github.com/lutris/docs/blob/master/InstallingDrivers.md
 
 then uncomment:
 
@@ -105,8 +105,9 @@ First you need YAY:
 sudo pacman -S git go
 git clone https://aur.archlinux.org/yay.git
 makepkg -si
-sudo pacman -U file.tar
 ```
+if you do "makepkg -s", do "sudo pacman -U file.tar" to install/upgrade
+
 then you can install MOCP:
 ```bash
 yay -S moc-pulse
@@ -140,6 +141,27 @@ and uncomment the following line:
 ## To include most of the existing syntax definitions, you can do:
 # include "/usr/share/nano/*.nanorc"
 ```
+---
+**9.VSCODE AND CONFIG:**
+
+Install with yay
+bash```
+yay -S visual-studio-code-bin
+```
+
+Change font on the .json file
+
+bash```
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.fontFamily": "Source Code Pro",
+    "editor.fontWeight": "bold",
+    "editor.fontLigatures": false
+}
+```
+
+and change keybind for "terminal toggle".
+
 ---
 # PACKAGES:
   

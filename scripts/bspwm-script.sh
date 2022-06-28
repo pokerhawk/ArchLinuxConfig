@@ -30,8 +30,8 @@ clear
 echo "INSTALLING NAUTILUS"
 sudo pacman -S nautilus
 clear
-echo "INSTALLING PACMANFM AND GVFS"
-sudo pacman -S pacmanfm gvfs
+echo "INSTALLING PCMANFM AND GVFS"
+sudo pacman -S pcmanfm gvfs
 clear
 echo "INSTALLING NUMLOCKX"
 sudo pacman -S numlockx
@@ -60,6 +60,7 @@ cp ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
 
 #BSPWM
 
+mkdir ~/.config
 sudo mkdir ~/.config/bspwm
 echo "Copiar arquivo bspwm de /usr/share/doc/bspwm/example? ou utilizar arquivo personalizado? [copia/pers]"
 read bspwmconfig
