@@ -145,13 +145,13 @@ and uncomment the following line:
 **9.VSCODE AND CONFIG:**
 
 Install with yay
-bash```
+```bash
 yay -S visual-studio-code-bin
 ```
 
 Change font on the .json file
 
-bash```
+```bash
 {
     "workbench.colorTheme": "Monokai",
     "editor.fontFamily": "Source Code Pro",
