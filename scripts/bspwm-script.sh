@@ -101,7 +101,7 @@ sudo cp -r ../Sweet-cursors /usr/share/icons/
 
 cp -r ../config/picom ~/.config
 
-#ADICIONANDO IGNORE-CASE
+#ADICIONANDO IGNORE-CASE				FIX
 
 sudo echo "set completion-ignore-case on" >> /etc/inputrc
 
@@ -115,9 +115,15 @@ if [ $bashrc == "y" ]||[ $bashrc == "Y" ]; then
 	cp ../xinit-bashrc/.bashrc ~/
 fi
 
+#TERMINATOR config
+
+if [ -f "/usr/bin/terminator" ]; then
+	cp -r ../config/terminator ~/.config/
+fi
+
 #INSTALLING LUTRIS ESSENTIALS
 
-echo "INSTALANDO PACOTES ESSENCIAIS PARA LUTRIS"
+echo "INSTALANDO PACOTES ESSENCIAIS PARA LUTRIS/AMD DRIVES"
 sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 
 #FIM
