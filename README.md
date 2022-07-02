@@ -110,7 +110,7 @@ if you do "makepkg -s", do "sudo pacman -U file.tar" to install/upgrade
 
 then you can install MOCP:
 ```bash
-yay -S moc-pulse
+sudo pacman -S moc
 sudo pacman -S alsa-utils pulseaudio-alsa
 ```
 config the file to have transparent background with:
