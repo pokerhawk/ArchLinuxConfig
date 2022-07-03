@@ -381,16 +381,16 @@ colors:
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
-  #style:
+  style:
     # Cursor shape
     #
     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-shape: Hollow
+    shape: Underline
 
     #Cursor blinking state
     #
@@ -399,7 +399,7 @@ shape: Hollow
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-blinking: On 
+    blinking: Always
 
   # Vi mode cursor style
   #
@@ -410,7 +410,7 @@ blinking: On
   #vi_mode_style: None
 
   # Cursor blinking interval in milliseconds.
-blink_interval: 750
+  blink_interval: 400
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
