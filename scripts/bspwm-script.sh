@@ -77,7 +77,12 @@ fi
 #SXHKD
 
 mkdir ~/.config/sxhkd
-cp -r -v ../config/sxhkd/sxhkdrc ~/.config/sxhkd
+if [ -f '/usr/bin/terminator' ]; then
+	cp -r -v ../config/sxhkd/sxhkdrc ~/.config/sxhkd
+fi
+if [ -f '/usr/bin/alacritty' ]; then
+	cp -r -v ../config/sxhkd_alacritty/sxhkdrc ~/.config/sxhkd
+fi
 
 #POLYBAR
 
