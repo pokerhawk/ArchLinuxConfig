@@ -126,7 +126,7 @@ nano ~/.moc/config
 #StartInMusicDir = no
 ```
 ---
-**8.NANO SYNTAX HIGHLIGHTING:**
+**8.NANO AND VIM SYNTAX HIGHLIGHTING:**
 
 nano-syntax-highlighting should be installed, if not do:
 ```bash
@@ -135,6 +135,10 @@ sudo pacman -S nano-syntax-highlighting
 then you go onto:
 ```bash
 sudo nano /etc/nanorc
+#open any file with vim and do
+:set syntax=on
+ls -l /usr/share/vim/vim90/colors/
+:colorscheme color_name
 ```
 and uncomment the following line:
 ```bash
