@@ -12,6 +12,9 @@ clear
 echo "INSTALLING TERMINATOR"
 sudo pacman -S terminator
 clear
+echo "INSTALLING ALACRITTY"
+sudo pacman -S alacritty
+clear
 echo "INSTALANDO PACK DOS ESSENCIAIS"
 sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock
 clear
@@ -56,7 +59,7 @@ sleep 1
 
 # MOVENDO XINIT
 
-cp ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
+cp -v ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
 
 #BSPWM
 
@@ -74,18 +77,18 @@ fi
 #SXHKD
 
 mkdir ~/.config/sxhkd
-cp -r ../config/sxhkd/sxhkdrc ~/.config/sxhkd
+cp -r -v ../config/sxhkd/sxhkdrc ~/.config/sxhkd
 
 #POLYBAR
 
 mkdir ~/.config/polybar
-cp ../config/polybar/config.ini ~/.config/polybar
-cp ../config/polybar/launch.sh ~/.config/polybar
+cp -v ../config/polybar/config.ini ~/.config/polybar
+cp -v ../config/polybar/launch.sh ~/.config/polybar
 
 #WALLPAPER, THEME AND PICOM ON MOCP
 
 mkdir ~/Pictures/
-cp ../kaylesideansty.jpg ~/Pictures/
+cp -v ../kaylesideansty.jpg ~/Pictures/
 feh --bg-fill ~/Pictures/kaylesideansty.jpg
 
 echo "MOCP TRANSPARENTE // SÓ FAZ SE MOCP ESTIVER INSTALADO"
@@ -94,12 +97,12 @@ if [[ -f "/home/pk/.moc/config" ]]; then
 	echo "XTermTheme = transparent-background" >> ~/.moc/config
 fi
 echo "COPIANDO ADWAITA-DARK THEM AND SWEET-CURSORS TO /usr/share/"
-sudo cp -r ../Adwaita-dark /usr/share/themes/
-sudo cp -r ../Sweet-cursors /usr/share/icons/
+sudo cp -r -v ../Adwaita-dark /usr/share/themes/
+sudo cp -r -v ../Sweet-cursors /usr/share/icons/
 
 #PICOM (blur background)
 
-cp -r ../config/picom ~/.config
+cp -r -v ../config/picom ~/.config
 
 #ADICIONANDO IGNORE-CASE				FIX
 
@@ -112,13 +115,16 @@ cat ../xinit-bashrc/.bashrc
 echo "bashrc personalizado? [Y/n]"
 read bashrc
 if [ $bashrc == "y" ]||[ $bashrc == "Y" ]; then
-	cp ../xinit-bashrc/.bashrc ~/
+	cp -v ../xinit-bashrc/.bashrc ~/
 fi
 
-#TERMINATOR config
+#TERMINATOR AND ALACRITTY config
 
 if [ -f "/usr/bin/terminator" ]; then
-	cp -r ../config/terminator ~/.config/
+	cp -r -v ../config/terminator ~/.config/
+fi
+if [ -f "/usr/bin/alacritty" ]; then
+	cp -r -v ../config/alacritty ~/.config/
 fi
 
 #INSTALLING LUTRIS ESSENTIALS

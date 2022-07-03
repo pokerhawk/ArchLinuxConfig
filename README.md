@@ -226,7 +226,9 @@ maim && xclip (printar tela)
 
 unrar (for .rar files "unrar x <file>")
 
-cava (audio thingy)
+cava (audio thingy yay)
+
+peaclock (display time)
 
 openssh && sshfs (to remote access and mount remote-ssh devices)
 
