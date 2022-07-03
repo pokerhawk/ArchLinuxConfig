@@ -93,8 +93,9 @@ feh --bg-fill ~/Pictures/kaylesideansty.jpg
 
 echo "MOCP TRANSPARENTE // SÓ FAZ SE MOCP ESTIVER INSTALADO"
 if [[ -f "/home/pk/.moc/config" ]]; then
-	cp /usr/share/doc/moc/config.example ~/.moc/config
-	echo "XTermTheme = transparent-background" >> ~/.moc/config
+	cp -v ../config/moc/config ~/.moc/
+	#cp /usr/share/doc/moc/config.example ~/.moc/config
+	#echo "XTermTheme = transparent-background" >> ~/.moc/config
 fi
 echo "COPIANDO ADWAITA-DARK THEM AND SWEET-CURSORS TO /usr/share/"
 sudo cp -r -v ../Adwaita-dark /usr/share/themes/
