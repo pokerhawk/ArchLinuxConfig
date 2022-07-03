@@ -113,10 +113,9 @@ then you can install MOCP:
 sudo pacman -S moc
 sudo pacman -S alsa-utils pulseaudio-alsa
 ```
-config the file to have transparent background with:
+copy the file config file:
 ```bash
-cp /usr/share/doc/moc/config.example ~/.moc/config
-echo "XTermTheme = transparent-background" >> ~/.moc/config
+cp ~/Downloads/ArchLinuxConfig/config/moc/config ~/.moc/config
 ```
 if you want MOCP to start on a specific directory:
 ```bash
