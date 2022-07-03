@@ -163,6 +163,15 @@ Change font on the .json file
 and change keybind for "terminal toggle".
 
 ---
+
+**10.FONTS**
+```bash
+sudo pacman -S ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk
+yay -S noto-fonts-tc ttf-tw
+```
+
+---
+
 # PACKAGES:
   
 terminator ou Alacritty (terminal)
