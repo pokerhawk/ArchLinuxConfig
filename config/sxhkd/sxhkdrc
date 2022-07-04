@@ -82,7 +82,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}' 				##REPITIDO
+	bspc {desktop -f,node -d} '^{1-9,10}'				##REPITIDO
 ctrl + {_,super + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
@@ -106,12 +106,6 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-super + alt + {Left,Down,Up,Right}
-	/path/to/bspwm_smart_move {west,south,north,east}
-#
-
 # expand a window by moving one of its side outward
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
@@ -134,3 +128,7 @@ super + shift + s
 #lock screen
 super + ctrl + p
 	slock
+
+#move/resize
+super + alt + {Left,Down,Up,Right}
+	/home/pk/.config/extra_config_files/bspwm_smart_move {west,south,north,east}
