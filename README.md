@@ -193,7 +193,7 @@ polybar (akela barra de cima e embaixo)
 
 pcmanfm (program for file system like nautilus)
 
-feh or nitrogen (imager viewer/background wallpaper)
+feh and nomacs (background wallpaper/imager viewer)
 
 leafpad > emacs > gedit (editor de texto)
 
@@ -231,8 +231,8 @@ peaclock (display time)
 
 openssh && sshfs (to remote access and mount remote-ssh devices)
 
-net-tools && gnu-netcat (tools pra internet)
-  
+net-tools && gnu-netcat (tools pra internet) 
+
 # PROGRAMAS:
   
 ani-cli
