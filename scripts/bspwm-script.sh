@@ -133,6 +133,11 @@ if [ -f "/usr/bin/alacritty" ]; then
 	cp -r -v ../config/alacritty ~/.config/
 fi
 
+#MOVING BSPWM ROTATING SCRIPT
+
+cp -r -v ../config/extra_config_files/ ~/.config/
+chmod +x ~/.config/extra_config_files/bspwm_smart_move
+
 #INSTALLING LUTRIS ESSENTIALS
 
 echo "INSTALANDO PACOTES ESSENCIAIS PARA LUTRIS/AMD DRIVES"
