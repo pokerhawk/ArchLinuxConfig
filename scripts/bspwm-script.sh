@@ -16,7 +16,7 @@ echo "INSTALLING ALACRITTY"
 sudo pacman -S alacritty
 clear
 echo "INSTALANDO PACK DOS ESSENCIAIS"
-sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock nomacs
+sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock nomacs ttf-nerd-fonts-symbols ctags
 clear
 echo "INSTALLING SYNTAX HIGHLIGHTER(NOT NEEDED)"
 sudo pacman -S nano-syntax-highlighting
@@ -51,6 +51,9 @@ sudo pacman -S arandr
 clear
 echo "INSTALLING NTFS PARA LER WINDOWS FILES"
 sudo pacman -S ntfs-3g
+clear
+echo "INSTALLING NVIM >> VSCODE"
+sudo pacman -S neovim
 clear
 echo "INSTALLING FIREFOX"
 sudo pacman -S firefox
@@ -135,6 +138,7 @@ fi
 
 #MOVING EXTRA CONFIG FILES
 
+cp -r -v ../config/nvim/ ~/.config/
 cp -r -v ../config/extra_config_files/ ~/.config/
 chmod +x ~/.config/extra_config_files/bspwm_smart_move
 

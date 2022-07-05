@@ -172,6 +172,24 @@ and change keybind for "terminal toggle".
 sudo pacman -S ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk
 yay -S noto-fonts-tc ttf-tw
 ```
+---
+
+**11.NVIM**
+
+Open nvim, install the plugins then go to plugged dir and install dep:
+```bash
+:PlugInstall
+cd .local/share/nvim/plugged/coc.nvim/
+sudo npm install -g yarn
+yarn install
+yarn build
+```
+---
+
+**12.PACKAGES AFTER INSTALL**
+```bash
+npm nodejs python unrar tar ttf-nerd-fonts-symbols ctags vlc mpv
+```
 
 ---
 
