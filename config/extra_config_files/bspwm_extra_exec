@@ -1,0 +1,9 @@
+alacritty|bspc rule -a Alacritty -o desktop='^5' state=floating rectangle=1117x505+12+38 &
+sleep 0.2
+alacritty --hold -e ranger|bspc rule -a Alacritty -o desktop='^5' state=floating rectangle=1117x505+12+559 &
+sleep 0.2
+alacritty --hold -e peaclock|bspc rule -a Alacritty -o desktop='^5' state=floating rectangle=759x305+1145+38 &
+sleep 0.2
+alacritty --hold -e cava|bspc rule -a Alacritty -o desktop='^5' state=floating rectangle=759x184+1145+359 &
+sleep 0.2
+alacritty --hold -e mocp|bspc rule -a Alacritty -o desktop='^5' state=floating rectangle=759x505+1145+559 &

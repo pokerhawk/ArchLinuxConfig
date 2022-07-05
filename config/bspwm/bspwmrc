@@ -32,7 +32,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a discord desktop='^10' state=floating rectangle=1230x724+1943+148
-bspc rule -a Pcmanfm state=floating
+#bspc rule -a Pcmanfm state=floating
 bspc rule -a mpv state=fullscreen
 bspc rule -a feh state=floating rectangle=1600x900+100+100
 bspc rule -a vlc state=floating
@@ -48,5 +48,6 @@ xsetroot -cursor_name Sweet-cursors &
 polybar &
 picom --experimental-backends &
 lxappearance &
-sleep 2 &
+sleep 0.2
 killall -q lxappearance &
+bash ~/.config/extra_config_files/bspwm_extra_exec &
