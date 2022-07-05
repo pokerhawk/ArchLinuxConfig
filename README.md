@@ -184,6 +184,12 @@ sudo npm install -g yarn
 yarn install
 yarn build
 ```
+
+You can change the Monokai colorscheme colors at:
+```bash
+cd /home/pk/.local/share/nvim/plugged/monokai.nvim/lua/monokai.lua
+```
+
 ---
 
 **12.PACKAGES AFTER INSTALL**
