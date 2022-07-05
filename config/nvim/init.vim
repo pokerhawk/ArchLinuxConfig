@@ -23,9 +23,16 @@ call plug#begin()
 call plug#end()
 
 nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree /run/media/HDD/Workspace<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-w> :TagbarToggle<CR>
+nnoremap <C-c> :TagbarToggle<CR>
+nnoremap <C-b> :NERDTree /home/pk/<CR>
+nnoremap <C-n> :NERDTree /run/media/HDD/Workspace<CR>
+nnoremap <C-h> :NERDTree /home/pk/.config/<CR>
 
-" let g:NERDTreeDirArrowExpandable="+"
-" let g:NERDTreeDirArrowCollapsible="~"
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
+
+" END
