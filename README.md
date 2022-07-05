@@ -190,6 +190,8 @@ You can change the Monokai colorscheme colors at:
 cd /home/pk/.local/share/nvim/plugged/monokai.nvim/lua/monokai.lua
 ```
 
+replace monokai.lua with ArchLinuxConfig/config/monokai_colorscheme/monokai.lua
+
 ---
 
 **12.PACKAGES AFTER INSTALL**

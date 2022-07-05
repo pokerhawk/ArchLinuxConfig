@@ -1,6 +1,5 @@
 set number
 " :set relativenumber
-syntax on
 " :colorscheme monokai " elflord, desert, delek and another one down there
 :set autoindent
 :set tabstop=4
@@ -20,6 +19,7 @@ call plug#begin()
 	" Plug 'https://github.com/ryanoasis/nerd-fonts.git' ttf-nerd-fonts-symbols
 	Plug 'https://github.com/tanvirtin/monokai.nvim.git'
 	Plug 'https://github.com/neoclide/coc.nvim.git'
+	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git'
 
 call plug#end()
 
@@ -35,7 +35,19 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-json',
+  \ 'coc-css',
+  \  'coc-eslint',
+  \  'coc-prettier'
+  \ ]
 
+syntax on
+colorscheme monokai
+colorscheme monokai_pro
+colorscheme monokai_soda
+colorscheme monokai_ristretto
 :colorscheme monokai 
 
 
