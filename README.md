@@ -176,7 +176,9 @@ yay -S noto-fonts-tc ttf-tw
 
 **11.NVIM**
 
-Open nvim, install the plugins then go to plugged dir and install dep:
+First install vim-plug from https://github.com/junegunn/vim-plug
+
+then open nvim, install the plugins then go to plugged dir and install dep:
 ```bash
 :PlugInstall
 cd .local/share/nvim/plugged/coc.nvim/
