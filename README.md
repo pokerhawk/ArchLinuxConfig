@@ -197,7 +197,8 @@ replace monokai.lua with ArchLinuxConfig/config/monokai_colorscheme/monokai.lua
 
 **12.PACKAGES AFTER INSTALL**
 ```bash
-npm nodejs python unrar tar ttf-nerd-fonts-symbols ctags vlc mpv
+sudo pacman -S npm nodejs python unrar tar ttf-nerd-fonts-symbols ctags vlc mpv steam wine winetricks npm python lutris
+yay -S cava peaclock
 ```
 
 ---
