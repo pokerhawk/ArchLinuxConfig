@@ -59,12 +59,12 @@ rofi-theme-selector
 ---
 **4.FANCONTROL:**
 
-Após configurar copia o arquivo "fancontrol" dentro da pasta fancontrol e cola em /etc/:
+Execute the command and reboot:
 ```bash
-cp </to/folder>/fancontrol/fancontrol /etc/fancontrol
+sudo systemctl enable fancontrol
 ```
   
-To config it:
+Then you can config it:
 ```bash
 sudo sensors-detect
 sudo pwmconfig
