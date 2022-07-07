@@ -55,6 +55,9 @@ clear
 echo "INSTALLING NVIM >> VSCODE"
 sudo pacman -S neovim
 clear
+echo "INSTALLING CHROMIUM"
+sudo pacman -S chromium
+clear
 echo "INSTALLING FIREFOX"
 sudo pacman -S firefox
 clear
