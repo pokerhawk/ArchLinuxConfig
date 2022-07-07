@@ -16,6 +16,7 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh" // ##D
 ```bash
 sudo nano /etc/pacman.conf
 sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+sudo echo "set completion-ignore-case on" >> /etc/inputrc
 ```
 NOTE: for all drivers https://github.com/lutris/docs/blob/master/InstallingDrivers.md
 

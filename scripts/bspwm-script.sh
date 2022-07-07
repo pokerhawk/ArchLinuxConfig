@@ -71,10 +71,10 @@ sudo mkdir ~/.config/bspwm
 echo "Copiar arquivo bspwm de /usr/share/doc/bspwm/example? ou utilizar arquivo personalizado? [copia/pers]"
 read bspwmconfig
 if [ $bspwmconfig == "copia" ]; then
-	cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+	cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 	echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
 elif [ $bspwmconfig == "pers" ]; then
-	cp ../config/bspwm/bspwmrc ~/.config/bspwm
+	cp -r ../config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 fi
 
 #SXHKD
@@ -112,10 +112,6 @@ sudo cp -r -v ../Sweet-cursors /usr/share/icons/
 #PICOM (blur background)
 
 cp -r -v ../config/picom ~/.config
-
-#ADICIONANDO IGNORE-CASE				FIX
-
-sudo echo "set completion-ignore-case on" >> /etc/inputrc
 
 #BASHRC personalizado
 
