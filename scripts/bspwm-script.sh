@@ -61,6 +61,9 @@ clear
 echo "INSTALLING FIREFOX"
 sudo pacman -S firefox
 clear
+echo "INSTALLING BASE-DEVELS"
+sudo pacman -S --needed base-devel
+clear
 sleep 1
 
 # MOVENDO XINIT
