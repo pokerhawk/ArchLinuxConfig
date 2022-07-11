@@ -74,10 +74,10 @@ sudo mkdir ~/.config/bspwm
 echo "Copiar arquivo bspwm de /usr/share/doc/bspwm/example? ou utilizar arquivo personalizado? [copia/pers]"
 read bspwmconfig
 if [ $bspwmconfig == "copia" ]; then
-	cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+	sudo cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 	echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
 elif [ $bspwmconfig == "pers" ]; then
-	cp -r ../config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
+	sudo cp -v ../config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 fi
 
 #SXHKD
