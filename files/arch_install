@@ -1,0 +1,56 @@
+loadkeys br-abnt2
+ping google.com
+<add iwctl here>
+fdisk -l
+cfdisk /dev/<disco>
+mkfs.fat -F32 /dev/<disk>
+mkfs.ext4 /dev/<disk>
+mkswap /dev/<disk>
+mount /dev/<disk> /mnt
+mkdir /mnt/boot
+mkdir /mnt/boot/efi
+mkdir /mnt/home
+mount /dev/<disk> /mnt/boot/efi
+mount /dev/<disk> /mnt/home
+swapon /dev/<disk>
+pacstrap /mnt base linux linux-firmware
+genfstab -U -p /mnt >> /mnt/etc/fstab ("cat" into the file to check if everything is mounted correctly)
+arch-chroot /mnt
+pacman -S networkmanager nano sudo (activate net with "systemctl enable NetworkManager")
+touch /etc/localtime (gotta check that)
+ls -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+hwclock --systohc (sync time)
+echo KEYMAP=br-abnt2 >> /etc/vconsole.conf
+echo archlinux >> /etc/hostname
+nano /etc/hosts (if you use IPV6)
+
+	127.0.0.1 localhost.localdomain localhost
+	::1 localhost.localdomain localhost
+	127.0.0.1 arch.localdomain arch
+
+passwd (set root passwd)
+useradd -m -g users -G wheel pk
+passwd pk
+nano /etc/sudoers	(uncomment wheel and sudo line)
+pacman -S dosfstools os-prober mtools wpa_supplicant wireless_tools dialog
+pacman -S grub-efi-x86_64 efibootmgr (for efi)
+pacman -S grub (for non-efi)
+
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck (for efi)
+grub-install --target=i386-pc --recheck /dev/sda (for non-efi)
+
+cp /usr/share/locale/en/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
+
+grub-mkconfig -o /boot/grub/grub.cfg (this command for both efi and non-efi)
+
+exit
+reboot
+
+
+
+
+
+
+
+
+### DONE ###
