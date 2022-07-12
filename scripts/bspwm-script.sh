@@ -64,6 +64,11 @@ clear
 echo "INSTALLING BASE-DEVELS"
 sudo pacman -S --needed base-devel
 clear
+
+# EXTRA SHIT TO ADD WITH TIME:
+echo "PACOTES AUXILIARES(RECOMENDED)"
+sudo pacman -S lib32-libpulse
+clear
 sleep 1
 
 # MOVENDO XINIT
