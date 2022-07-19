@@ -1,1 +1,10 @@
+##DIFFERENT WALLPAPERS##
 feh --bg-fill 'Pictures/kaylesideansty.jpg' --bg-scale 'Pictures/jap_alphabet.jpg'
+
+##DUAL BOOT FIX##
+sudo os-prober (windows C: partition have to be mounted)
+sudo grub-update (yay -S grub-update)
+sudo nano /etc/default/grub
+uncomment line:
+#GRUB_DISABLE_OS_PROBER=false
+
