@@ -1,9 +1,10 @@
+sleep 0.3
 alacritty --hold -e mocp|bspc rule -a Alacritty -o desktop='^3' state=floating rectangle=759x505+1145+559 &
-sleep 0.2
+sleep 0.3
 alacritty --hold -e cava|bspc rule -a Alacritty -o desktop='^3' state=floating rectangle=759x184+1145+359 &
-sleep 0.2
+sleep 0.3
 alacritty --hold -e peaclock|bspc rule -a Alacritty -o desktop='^3' state=floating rectangle=759x305+1145+38 &
-sleep 0.2
+sleep 0.3
 alacritty|bspc rule -a Alacritty -o desktop='^3' state=floating rectangle=1117x200+12+864 &
-sleep 0.2
+sleep 0.3
 alacritty|bspc rule -a Alacritty -o desktop='^3' state=floating rectangle=1117x810+12+38 &
