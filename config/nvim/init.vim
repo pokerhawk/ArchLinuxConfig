@@ -22,6 +22,8 @@ call plug#begin()
 	" Plug 'https://github.com/junegunn/rainbow_parentheses.vim.git' " give brackets matching colors
 	Plug 'https://github.com/sheerun/vim-polyglot.git' " syntax highlighting
 	Plug 'https://github.com/jiangmiao/auto-pairs.git' " auto close brackets
+	Plug 'https://github.com/mattn/emmet-vim' " HTML auto make
+	Plug 'https://github.com/alvan/vim-closetag' " auto tag on HTML
 
 call plug#end()
 
@@ -38,6 +40,7 @@ nnoremap <silent> <Leader><Leader> :source /home/pk/.config/nvim/init.vim<CR>
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
+" let g:user_emmet_leader_key=','
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let g:coc_global_extensions = [
