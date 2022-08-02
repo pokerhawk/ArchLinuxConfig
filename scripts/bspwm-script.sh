@@ -107,8 +107,9 @@ cp -v ../config/polybar/launch.sh ~/.config/polybar
 #WALLPAPER, THEME AND PICOM ON MOCP
 
 mkdir ~/Pictures/
-cp -v ../kaylesideansty.jpg ~/Pictures/
-feh --bg-fill ~/Pictures/kaylesideansty.jpg
+cp -v ../img/kaylesideansty.jpg ~/Pictures/
+cp -v ../img/jap_alphabet.jpg ~/Pictures/
+feh --bg-fill 'Pictures/kaylesideansty.jpg' --bg-scale 'Pictures/jap_alphabet.jpg'
 
 echo "MOCP TRANSPARENTE // SÓ FAZ SE MOCP ESTIVER INSTALADO"
 if [[ -f "/home/pk/.moc/config" ]]; then

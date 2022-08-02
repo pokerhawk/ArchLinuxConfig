@@ -9,7 +9,7 @@ ssh://pk@192.168.18.155
 
 ##DUAL BOOT FIX##
 sudo os-prober (windows C: partition have to be mounted)
-sudo grub-update (yay -S grub-update)
+sudo update-grub (yay -S update-grub)
 sudo nano /etc/default/grub
 uncomment line:
 #GRUB_DISABLE_OS_PROBER=false
