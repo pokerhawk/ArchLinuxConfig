@@ -151,8 +151,8 @@ chmod +x ~/.config/extra_config_files/bspwm_smart_move
 
 #INSTALLING LUTRIS ESSENTIALS
 
-echo "INSTALANDO PACOTES ESSENCIAIS PARA LUTRIS/AMD DRIVES"
-sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+echo "INSTALANDO PACOTES ESSENCIAIS PARA LUTRIS/AMD DRIVES AND ELSE"
+sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader lib32-libpulse lib32-alsa-plugins
 
 #FIM
 
