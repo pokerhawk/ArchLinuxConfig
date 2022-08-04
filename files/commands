@@ -5,7 +5,8 @@ feh --bg-fill 'Pictures/kaylesideansty.jpg' --bg-scale 'Pictures/jap_alphabet.jp
 windows:
 \\sshfs\pk@192.168.18.155
 linux:
-ssh://pk@192.168.18.155
+ssh://pk@192.168.18.155 (connect via file manager)
+sshfs pk@192.168.18.155:/home/pk ~/Disk/ (mount it via terminal/arch)
 
 ##DUAL BOOT FIX##
 sudo os-prober (windows C: partition have to be mounted)
