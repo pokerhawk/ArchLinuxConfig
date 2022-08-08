@@ -16,7 +16,7 @@ echo "INSTALLING ALACRITTY"
 sudo pacman -S alacritty
 clear
 echo "INSTALANDO PACK DOS ESSENCIAIS"
-sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock nomacs ttf-nerd-fonts-symbols ctags
+sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock nomacs ttf-nerd-fonts-symbols ctags 
 clear
 echo "INSTALLING SYNTAX HIGHLIGHTER(NOT NEEDED)"
 sudo pacman -S nano-syntax-highlighting
@@ -149,6 +149,11 @@ fi
 cp -r -v ../config/nvim/ ~/.config/
 cp -r -v ../config/extra_config_files/ ~/.config/
 chmod +x ~/.config/extra_config_files/bspwm_smart_move
+
+#INSTALLING LIBS
+
+echo "INSTALANDO LIBS"
+sudo pacman -S sndio portaudio wavpack
 
 #INSTALLING LUTRIS ESSENTIALS
 
