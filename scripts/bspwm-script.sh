@@ -36,6 +36,9 @@ clear
 echo "INSTALLING PCMANFM AND GVFS"
 sudo pacman -S pcmanfm gvfs
 clear
+echo "INSTALLING THUNAR"
+sudo pacman -S thunar gvfs
+clear
 echo "INSTALLING NUMLOCKX"
 sudo pacman -S numlockx
 clear
