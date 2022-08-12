@@ -68,12 +68,6 @@ echo "INSTALLING BASE-DEVELS"
 sudo pacman -S --needed base-devel
 clear
 
-# EXTRA SHIT TO ADD WITH TIME:
-echo "PACOTES AUXILIARES(RECOMENDED)"
-sudo pacman -S lib32-libpulse
-clear
-sleep 1
-
 # MOVENDO XINIT
 
 cp -v ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
@@ -155,13 +149,15 @@ chmod +x ~/.config/extra_config_files/bspwm_smart_move
 
 #INSTALLING LIBS
 
-echo "INSTALANDO LIBS"
-sudo pacman -S sndio portaudio wavpack
+echo "INSTALANDO LIBS/FONTS AND EXTRA SHIT"
+sudo pacman -S sndio portaudio wavpack lib32-libpulse ttf-nerd-fonts-symbols noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk
+clear
 
 #INSTALLING LUTRIS ESSENTIALS
 
 echo "INSTALANDO PACOTES ESSENCIAIS PARA LUTRIS/AMD DRIVES AND ELSE"
 sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader lib32-libpulse lib32-alsa-plugins
+clear
 
 #FIM
 
