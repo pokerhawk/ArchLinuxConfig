@@ -1,5 +1,5 @@
 ##DIFFERENT WALLPAPERS##
-feh --bg-fill 'Pictures/kaylesideansty.jpg' --bg-scale 'Pictures/jap_alphabet.jpg'
+feh --bg-fill '~Pictures/kaylesideansty.jpg' --bg-scale '~Pictures/jap_alphabet.jpg'
 
 ##SSH CONNECTION
 windows:

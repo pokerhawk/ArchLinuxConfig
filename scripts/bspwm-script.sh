@@ -4,7 +4,7 @@
 
 sudo pacman -Syu
 echo "INSTALLING XORG/-XINIT/XSETROOT BSPWM SXHKD"
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd
+yes|sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd
 clear
 
 # INSTALANDO PACKAGES
@@ -16,16 +16,16 @@ echo "INSTALLING ALACRITTY"
 sudo pacman -S alacritty
 clear
 echo "INSTALANDO PACK DOS ESSENCIAIS"
-sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock nomacs ttf-nerd-fonts-symbols ctags 
+yes|sudo pacman -S git nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ttf-liberation ffmpegthumbnailer maim xclip slock nomacs ttf-nerd-fonts-symbols ctags
 clear
 echo "INSTALLING SYNTAX HIGHLIGHTER(NOT NEEDED)"
 sudo pacman -S nano-syntax-highlighting
 clear
 echo "INSTALLING PULSEAUDIO AND PAVUCONTROL"
-sudo pacman -S pulseaudio pavucontrol
+yes|sudo pacman -S pulseaudio pavucontrol
 clear
 echo "INSTALLING LXAPPEARANCE"
-sudo pacman -S lxappearance
+yes|sudo pacman -S lxappearance
 clear
 echo "INSTALLING RADEONTOP"
 sudo pacman -S radeontop
@@ -65,7 +65,7 @@ echo "INSTALLING FIREFOX"
 sudo pacman -S firefox
 clear
 echo "INSTALLING BASE-DEVELS"
-sudo pacman -S --needed base-devel
+yes|sudo pacman -S --needed base-devel
 clear
 
 # MOVENDO XINIT
@@ -150,7 +150,7 @@ chmod +x ~/.config/extra_config_files/bspwm_smart_move
 #INSTALLING LIBS
 
 echo "INSTALANDO LIBS/FONTS AND EXTRA SHIT"
-sudo pacman -S sndio portaudio wavpack lib32-libpulse ttf-nerd-fonts-symbols noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk
+yes|sudo pacman -S sndio portaudio wavpack lib32-libpulse ttf-nerd-fonts-symbols noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk
 clear
 
 #INSTALLING LUTRIS ESSENTIALS

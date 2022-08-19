@@ -27,6 +27,8 @@ call plug#begin()
 
 call plug#end()
 
+nmap j <Up>
+nmap k <Down>
 noremap <C-Up> 5k
 noremap <C-Down> 5j
 nnoremap <C-f> :NERDTreeFocus<CR>
