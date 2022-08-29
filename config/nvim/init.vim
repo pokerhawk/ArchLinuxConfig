@@ -29,8 +29,8 @@ call plug#end()
 
 nmap j <Up>
 nmap k <Down>
-noremap <C-Up> 5k
-noremap <C-Down> 5j
+noremap <C-j> 5k
+noremap <C-k> 5j
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-c> :TagbarToggle<CR>
