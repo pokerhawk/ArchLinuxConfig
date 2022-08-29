@@ -24,6 +24,7 @@ call plug#begin()
 	Plug 'https://github.com/jiangmiao/auto-pairs.git' " auto close brackets
 	Plug 'https://github.com/mattn/emmet-vim' " HTML auto make
 	Plug 'https://github.com/alvan/vim-closetag' " auto tag on HTML
+	Plug 'https://github.com/ervandew/supertab' " auto completes with TAB
 
 call plug#end()
 
