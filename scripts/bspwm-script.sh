@@ -4,26 +4,25 @@
 
 sudo pacman -Syu
 echo "INSTALLING XORG/-XINIT/XSETROOT BSPWM SXHKD"
-yes|sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd
 clear
 
 # INSTALANDO PACKAGES
-##### AUTO YES PACKAGES
 echo "INSTALANDO PACK DOS ESSENCIAIS"
-yes|sudo pacman -S nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ttf-nerd-fonts-symbols ctags
+sudo pacman -S nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags
 clear
 echo "INSTALLING PULSEAUDIO AND PAVUCONTROL"
-yes|sudo pacman -S pulseaudio pavucontrol
+sudo pacman -S pulseaudio pavucontrol
 clear
 echo "INSTALLING LXAPPEARANCE"
-yes|sudo pacman -S lxappearance
+sudo pacman -S lxappearance
 clear
 echo "INSTALLING BASE-DEVELS"
-yes|sudo pacman -S --needed base-devel
+sudo pacman -S --needed base-devel
 clear
 #libs
 echo "INSTALANDO LIBS/FONTS AND EXTRA SHIT"
-yes|sudo pacman -S sndio portaudio wavpack lib32-libpulse ttf-nerd-fonts-symbols noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk lib32-libpulse lib32-alsa-plugins
+sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk
 clear
 
 #NON-AUTO PACKAGES
@@ -136,7 +135,7 @@ cp -v ../config/polybar/launch.sh ~/.config/polybar
 mkdir ~/Pictures/
 cp -v ../img/kaylesideansty.jpg ~/Pictures/
 cp -v ../img/jap_alphabet.jpg ~/Pictures/
-feh --bg-fill 'Pictures/kaylesideansty.jpg' --bg-scale 'Pictures/jap_alphabet.jpg'
+feh --bg-fill '~Pictures/kaylesideansty.jpg' --bg-scale '~Pictures/jap_alphabet.jpg'
 
 echo "MOCP TRANSPARENTE // SÓ FAZ SE MOCP ESTIVER INSTALADO"
 if [[ -f "/home/pk/.moc/config" ]]; then
