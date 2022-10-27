@@ -22,26 +22,61 @@ call plug#begin()
 	" Plug 'https://github.com/junegunn/rainbow_parentheses.vim.git' " give brackets matching colors
 	Plug 'https://github.com/sheerun/vim-polyglot.git' " syntax highlighting
 	Plug 'https://github.com/jiangmiao/auto-pairs.git' " auto close brackets
-	Plug 'https://github.com/mattn/emmet-vim' " HTML auto make
-	Plug 'https://github.com/alvan/vim-closetag' " auto tag on HTML
-	Plug 'https://github.com/ervandew/supertab' " auto completes with TAB
+	Plug 'https://github.com/mattn/emmet-vim.git' " HTML auto make
+	Plug 'https://github.com/alvan/vim-closetag.git' " auto tag on HTML
+	Plug 'https://github.com/ervandew/supertab.git' " auto completes with TAB
+	Plug 'https://github.com/airblade/vim-gitgutter.git' " Show git diff + and - on file
+	Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
 
 call plug#end()
 
 nmap j <Up>
 nmap k <Down>
-noremap <C-j> 5k
+noremap <C-j> 5k 
 noremap <C-k> 5j
+" Move lines with Alt:
+nmap <A-Up> :m .-2<CR> 
+nmap <A-Down> :m+<CR>
+inoremap <A-Up> <ESC>:m .-2<CR>
+inoremap <A-Down> <ESC>:m+<CR>
+"Nerd tree stuff:
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-c> :TagbarToggle<CR>
-nnoremap <C-b> :NERDTree /home/pk/<CR>
-nnoremap <C-n> :NERDTree /run/media/HDD/Workspace<CR>
-nnoremap <C-h> :NERDTree /home/pk/.config/<CR>
+nnoremap <C-n> :TagbarToggle<CR>
+"nnoremap <C-b> :NERDTree /home/pk/<CR>
+"nnoremap <C-n> :NERDTree /run/media/HDD/Workspace<CR>
+"nnoremap <C-h> :NERDTree /home/pk/.config/<CR>
 nnoremap <silent> <Leader><Leader> :source /home/pk/.config/nvim/init.vim<CR>
-" nnoremap <C-'> :Terminal Toggle<CR>
+vnoremap <C-c> "+y
+"nnoremap <C-'> :Terminal Toggle<CR>
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+" CoC maps
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
+
+" shift+arrow selection
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+imap <S-Up> <Esc>v<Up>
+imap <S-Down> <Esc>v<Down>
+imap <S-Left> <Esc>v<Left>
+imap <S-Right> <Esc>v<Right>
 
 " let g:user_emmet_leader_key=','
 let g:NERDTreeDirArrowExpandable="+"
