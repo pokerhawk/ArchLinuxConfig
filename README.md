@@ -16,8 +16,8 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh" // ##D
 ```bash
 sudo nano /etc/pacman.conf
 sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
-sudo echo "set completion-ignore-case on" >> /etc/inputrc
-sudo nano /etc/fstab
+sudo nano /etc/inputrc
+"set completion-ignore-case on"
 ```
 NOTE: for all drivers https://github.com/lutris/docs/blob/master/InstallingDrivers.md
 
@@ -29,7 +29,7 @@ then uncomment:
 
 and run:
 ```bash
-pacman -Syu
+pacman -Syy
 ```
 ---
 **2.SUDOERS AND ADD USERS**
@@ -102,7 +102,7 @@ bspc monitor HDMI-2 -d VIII IX X
 ---
 **7.YAY(AUR) and MOCP INSTALL:**
 
-First you need YAY:
+YAY:
 ```bash
 sudo pacman -S git go
 git clone https://aur.archlinux.org/yay.git
@@ -110,7 +110,7 @@ makepkg -si
 ```
 if you do "makepkg -s", do "sudo pacman -U file.tar" to install/upgrade
 
-then you can install MOCP:
+MOCP:
 ```bash
 sudo pacman -S moc
 sudo pacman -S alsa-utils pulseaudio-alsa
@@ -198,7 +198,7 @@ replace monokai.lua with ArchLinuxConfig/config/monokai_colorscheme/monokai.lua
 
 **12.PACKAGES AFTER INSTALL**
 ```bash
-sudo pacman -S npm nodejs python unrar tar ttf-nerd-fonts-symbols ctags vlc mpv steam wine winetricks npm python lutris tree
+sudo pacman -S unrar ttf-nerd-fonts-symbols vlc mpv steam wine winetricks lutris tree
 yay -S cava peaclock alttab-git
 ```
 
