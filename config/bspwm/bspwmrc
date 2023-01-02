@@ -45,10 +45,10 @@ bspc rule -a Lxappearance desktop='^8'
 
 ~/.fehbg &
 /usr/bin/numlockx on &
-xinput --set-prop 13 287 -1 &
+xinput --set-prop 13 286 -1 &
 xsetroot -cursor_name Sweet-cursors &
-polybar &
-picom --experimental-backends &
+~/.config/polybar/launch.sh &
+picom &
 lxappearance &
 alttab &
 bash ~/.config/extra_config_files/bspwm_extra_exec &
