@@ -17,7 +17,7 @@ screens=$(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f6)
 if [[ $(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f4 | cut -d"+" -f2- | uniq | wc -l) == 1 ]]; then
   MONITOR=$(polybar --list-monitors | cut -d":" -f1) TRAY_POS=right polybar main &
 else
-  primary=$(xrandr --query | grep " connected" | cut -d" " -f1 | grep -m1 H)
+  primary=$(xrandr --query | grep " connected" | cut -d" " -f1 | grep -m1 "")
 
   for m in $screens; do
     if [[ $primary == $m ]]; then
