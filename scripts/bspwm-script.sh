@@ -9,7 +9,7 @@ clear
 
 # INSTALANDO PACKAGES
 echo "INSTALANDO PACK DOS ESSENCIAIS"
-sudo pacman -S nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags
+sudo pacman -S nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap
 clear
 echo "INSTALLING PULSEAUDIO AND PAVUCONTROL"
 sudo pacman -S pulseaudio pavucontrol

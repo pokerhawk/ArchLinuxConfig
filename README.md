@@ -167,8 +167,8 @@ and change keybind for "terminal toggle".
 
 **10.FONTS**
 ```bash
-sudo pacman -S ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk
-yay -S noto-fonts-tc ttf-tw
+sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk
+yay -S nerd-fonts-complete
 ```
 ---
 
@@ -198,7 +198,7 @@ replace monokai.lua with ArchLinuxConfig/config/monokai_colorscheme/monokai.lua
 
 **12.PACKAGES AFTER INSTALL**
 ```bash
-sudo pacman -S unrar ttf-nerd-fonts-symbols vlc mpv steam wine winetricks lutris tree
+sudo pacman -S unrar vlc mpv steam wine winetricks lutris tree
 yay -S cava peaclock alttab-git
 ```
 
