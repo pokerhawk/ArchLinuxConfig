@@ -3,80 +3,53 @@
 # INSTALANDO WINDOW MANAGER
 
 sudo pacman -Syu
-echo "INSTALLING XORG/-XINIT/XSETROOT BSPWM SXHKD"
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd
-clear
-
-# INSTALANDO PACKAGES
-echo "INSTALANDO PACK DOS ESSENCIAIS"
-sudo pacman -S nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap
-clear
-echo "INSTALLING PULSEAUDIO AND PAVUCONTROL"
-sudo pacman -S pulseaudio pavucontrol
-clear
-echo "INSTALLING LXAPPEARANCE"
-sudo pacman -S lxappearance
+echo "INSTALLANDO OS ESSENCIAIS"
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty
 clear
 echo "INSTALLING BASE-DEVELS"
 sudo pacman -S --needed base-devel
 clear
-#libs
 echo "INSTALANDO LIBS/FONTS AND EXTRA SHIT"
 sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk
-clear
-
-#NON-AUTO PACKAGES
-
-echo "INSTALLING SYNTAX HIGHLIGHTER(NOT NEEDED)"
-sudo pacman -S nano-syntax-highlighting
-clear
-echo "INSTALLING RADEONTOP"
-sudo pacman -S radeontop
-clear
-echo "INSTALLING NUMLOCKX"
-sudo pacman -S numlockx
-clear
-echo "INSTALLING UFW AND GUFW"
-sudo pacman -S ufw gufw
 clear
 echo "INSTALLING LOLCAT"
 sudo pacman -S lolcat
 clear
-echo "INSTALLING ARAND"
-echo "arandr é para configurar posição dos monitores"
-sudo pacman -S arandr
-clear
-echo "INSTALLING NTFS PARA LER WINDOWS FILES"
-sudo pacman -S ntfs-3g
-clear
-echo "INSTALLING NVIM >> VSCODE"
-sudo pacman -S neovim
-clear
 
-#IF CONDITION PACKAGES
+#IF conditions
 
-echo "INSTALLING PCMANFM AND GVFS"
-sudo pacman -S pcmanfm gvfs
-clear
-if [ -f "/usr/bin/pcmanfm" ]; then
-	echo "pcmanfm installed"
-else
-	echo "INSTALLING THUNAR"
-	sudo pacman -S thunar gvfs
+echo "passar pelos programas desnecessários? [Y/n]"
+read progdesn
+if [ $progdesn == "Y" ]||[ $progdesn == "y" ]||[ -z "$progdesn" ]; then
+	echo "INSTALLING SYNTAX HIGHLIGHTER(NOT NEEDED)"
+	sudo pacman -S nano-syntax-highlighting
 	clear
-	echo "INSTALLING NAUTILUS"
-	sudo pacman -S nautilus
+	echo "INSTALLING RADEONTOP"
+	sudo pacman -S radeontop
+	clear
+	echo "INSTALLING UFW AND GUFW"
+	sudo pacman -S ufw gufw
+	clear
+	echo "INSTALLING ARAND"
+	echo "arandr é para configurar posição dos monitores"
+	sudo pacman -S arandr
+	clear
+	echo "INSTALLING NTFS PARA LER WINDOWS FILES"
+	sudo pacman -S ntfs-3g
+	clear
+	echo "INSTALLING NVIM"
+	sudo pacman -S neovim
 	clear
 fi
-echo "INSTALLING ALACRITTY"
-sudo pacman -S alacritty
-clear	  #mudar isso no futuro para algo diferente
-if [ -f "/usr/bin/alacritty" ]; then
-	echo "alacritty installed"
-else
-	echo"INSTALLING TERMINATOR"
-	sudo pacman -S terminator
-	clear
+
+echo " wich file manager? [PCMAN/thunar/nautilus]"
+read filemanager
+if [ $filemanager == "pcman" ]||[ $filemanager == "PCMAN" ]||[ -z "$filemanager" ]; then
+	sudo pacman -S pcmanfm gvfs
+elif [ $filemanager == "thunar" ]||[ $filemanager == "THUNAR" ]; then
+	sudo pacman -S thunar gvfs
+elif [ $filemanager == "nautilus" ]||[ $filemanager == "NAUTILUS" ]; then
+	sudo pacman -S nautilus
 fi
 
 echo "INSTALLING CHROMIUM"
@@ -105,12 +78,12 @@ cp -v ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
 
 mkdir ~/.config
 sudo mkdir ~/.config/bspwm
-echo "Copiar arquivo bspwm de /usr/share/doc/bspwm/example? ou utilizar arquivo personalizado? [copia/pers]"
+echo "bashrc Personalizado? [y/N]"
 read bspwmconfig
-if [ $bspwmconfig == "copia" ]; then
+if [ $bspwmconfig == "N" ]||[ $bspwmconfig == "n" ]||[ -z "$bspwmconfig" ]; then
 	sudo cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 	echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
-elif [ $bspwmconfig == "pers" ]; then
+elif [ $bspwmconfig == "y" ]||[ $bspwmconfig == "Y" ]; then
 	sudo cp -v ../config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 fi
 
@@ -135,7 +108,7 @@ cp -v ../config/polybar/launch.sh ~/.config/polybar
 mkdir ~/Pictures/
 cp -v ../img/kaylesideansty.jpg ~/Pictures/
 cp -v ../img/jap_alphabet.jpg ~/Pictures/
-feh --bg-fill '~Pictures/kaylesideansty.jpg' --bg-scale '~Pictures/jap_alphabet.jpg'
+feh --bg-fill '~/Pictures/kaylesideansty.jpg' --bg-scale '~/Pictures/jap_alphabet.jpg'
 
 echo "MOCP TRANSPARENTE // SÓ FAZ SE MOCP ESTIVER INSTALADO"
 if [[ -f "/home/pk/.moc/config" ]]; then
@@ -158,7 +131,7 @@ clear
 cat ../xinit-bashrc/.bashrc
 echo "bashrc personalizado? [Y/n]"
 read bashrc
-if [ $bashrc == "y" ]||[ $bashrc == "Y" ]; then
+if [ $bashrc == "y" ]||[ $bashrc == "Y" ]||[ -z "$bashrc" ]; then
 	cp -v ../xinit-bashrc/.bashrc ~/
 fi
 
@@ -166,7 +139,7 @@ fi
 
 if [ -f "/usr/bin/terminator" ]; then
 	cp -r -v ../config/terminator ~/.config/
-elif [ -f "/usr/bin/alacritty" ]; then ## testing//if stop working => change back to 2 if 
+elif [ -f "/usr/bin/alacritty" ]; then 
 	cp -r -v ../config/alacritty ~/.config/
 fi
 
@@ -175,6 +148,8 @@ fi
 cp -r -v ../config/nvim/ ~/.config/
 cp -r -v ../config/extra_config_files/ ~/.config/
 chmod +x ~/.config/extra_config_files/bspwm_smart_move
+cp -r -v ../config/extra_config_files/alttabrc ~/.alttabrc
+chmod +x ~/.alttabrc
 
 #FIM
 
@@ -182,7 +157,7 @@ clear
 echo "!!See the README file for extra packages!!"
 echo "Reboot the system? [Y/n]"
 read resposta
-if [ $resposta == "y" ]||[ $resposta == "Y" ]; then
+if [ $resposta == "y" ]||[ $resposta == "Y" ]||[ -z "$resposta" ]; then
 	reboot
 else
 	echo "everything is done"

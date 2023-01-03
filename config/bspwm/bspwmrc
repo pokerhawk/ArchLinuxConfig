@@ -50,7 +50,7 @@ xsetroot -cursor_name Sweet-cursors &
 ~/.config/polybar/launch.sh &
 picom &
 lxappearance &
-alttab &
 bash ~/.config/extra_config_files/bspwm_extra_exec &
 sleep 5
 killall -q lxappearance
+~/.alttabrc &
