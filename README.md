@@ -13,13 +13,20 @@ Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh" // ##D
 # CONFIGURAÇÕES APOS INSTALAÇÃO
 
 **1.MULTILIB AND DRIVES:**
+
 ```bash
-sudo nano /etc/pacman.conf
 sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+```
+
+```bash
 sudo nano /etc/inputrc
 "set completion-ignore-case on"
 ```
 NOTE: for all drivers https://github.com/lutris/docs/blob/master/InstallingDrivers.md
+
+```bash
+sudo nano /etc/pacman.conf
+```
 
 then uncomment:
 
@@ -192,11 +199,30 @@ You can change the Monokai colorscheme colors at:
 cd /home/pk/.local/share/nvim/plugged/monokai.nvim/lua/monokai.lua
 ```
 
-replace monokai.lua with ArchLinuxConfig/config/monokai_colorscheme/monokai.lua
+replaces monokai.lua with ArchLinuxConfig/config/monokai_colorscheme/monokai.lua
 
 ---
 
-**12.PACKAGES AFTER INSTALL**
+**12.SWAPPINESS and TRIM**
+
+Swap:
+
+```bash
+sudo sysctl -w vm.swappiness=10 #(default value is 60)
+
+```
+
+Trim:
+
+```bash
+systemctl list-timers | grep fstrim #list if trim is active
+sudo systemctl enable --now fstrim.timer #activate trim timer
+sudo fstrim -v /home #run trim
+```
+
+---
+
+**13.PACKAGES AFTER INSTALL**
 ```bash
 sudo pacman -S unrar vlc mpv steam wine winetricks lutris tree
 yay -S cava peaclock alttab-git
