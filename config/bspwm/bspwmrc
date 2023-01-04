@@ -46,11 +46,7 @@ bspc rule -a Lxappearance desktop='^8'
 ~/.fehbg &
 /usr/bin/numlockx on &
 xinput --set-prop 13 286 -1 &
-xsetroot -cursor_name Sweet-cursors &
 ~/.config/polybar/launch.sh &
 picom &
-lxappearance &
+sleep 20
 bash ~/.config/extra_config_files/bspwm_extra_exec &
-sleep 5
-killall -q lxappearance
-~/.alttabrc &

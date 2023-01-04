@@ -148,8 +148,7 @@ fi
 cp -r -v ../config/nvim/ ~/.config/
 cp -r -v ../config/extra_config_files/ ~/.config/
 chmod +x ~/.config/extra_config_files/bspwm_smart_move
-cp -r -v ../config/extra_config_files/alttabrc ~/.alttabrc
-chmod +x ~/.alttabrc
+chmod +x ~/.config/extra_config_files/bspwm_extra_exec
 
 #FIM
 

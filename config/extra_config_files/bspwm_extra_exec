@@ -8,3 +8,9 @@ sleep 0.3
 alacritty|bspc rule -a Alacritty -o desktop='^3' state=floating rectangle=1117x200+12+864 &
 sleep 0.3
 alacritty|bspc rule -a Alacritty -o desktop='^3' state=floating rectangle=1117x810+12+38 &
+sleep 1
+alttab &
+lxappearance &
+sleep 2
+killall -q lxappearance
+xsetroot -cursor_name Sweet-cursors &
