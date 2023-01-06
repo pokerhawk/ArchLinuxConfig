@@ -28,7 +28,7 @@ echo "----------------------"
 
 #Variables:
 
-repo_DIR = sudo find /home/$USER -name "ArchLinuxConfig"|grep -a1 /
+repo_DIR = sudo find /home/$USER -iname "ArchLinuxConfig"|grep -a1 /
 CURRENT_VM_SWAPPINESS=$(sysctl vm.swappiness | awk '{print $3}')
 
 sudo bash -c 'echo "set completion-ignore-case on" >> /etc/inputrc'
@@ -38,8 +38,8 @@ echo "completion ignore case ON > inputrc"
 
 text_editor="$(zenity --entry --text="We're about to open a file for you to edit, what text editor or terminal do you use?")"
 zenity --info --text="Uncomment:\n#[multilib]\n#Include = /etc/pacman.d/mirrorlist"
-sleep 1
 sudo $text_editor /etc/pacman.conf
+sudo pacman -Sy
 
 zenity --warning --text="Select a Rofi Theme"
 rofi-theme-selector
