@@ -70,6 +70,7 @@ sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-
 clear
 
 ##CONFIG FILES
+
 # MOVENDO XINIT
 
 cp -v ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
@@ -78,13 +79,15 @@ cp -v ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
 
 mkdir ~/.config
 sudo mkdir ~/.config/bspwm
-echo "bashrc Personalizado? [y/N]"
+echo -e "--BSPWM--\n1.Default config\n2.Your config\n3.Side config"
 read bspwmconfig
-if [ $bspwmconfig == "N" ]||[ $bspwmconfig == "n" ]||[ -z "$bspwmconfig" ]; then
+if [ $bspwmconfig == "1" ]; then
 	sudo cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 	echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
-elif [ $bspwmconfig == "y" ]||[ $bspwmconfig == "Y" ]; then
+elif [ $bspwmconfig == "2" ]; then
 	sudo cp -v ../config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
+elif [ $bspwmconfig == "3" ];then
+	sudo cp -v ../config/bspwm/bspwmrc_side ~/.config/bspwm/bspwmrc
 fi
 
 #SXHKD
@@ -97,18 +100,18 @@ if [ -f '/usr/bin/alacritty' ]; then
 	cp -r -v ../config/sxhkd_alacritty/sxhkdrc ~/.config/sxhkd
 fi
 
-#POLYBAR
-
-mkdir ~/.config/polybar
-cp -v ../config/polybar/config.ini ~/.config/polybar
-cp -v ../config/polybar/launch.sh ~/.config/polybar
-
 #WALLPAPER, THEME AND PICOM ON MOCP
 
 mkdir ~/Pictures/
 cp -v ../img/kaylesideansty.jpg ~/Pictures/
 cp -v ../img/jap_alphabet.jpg ~/Pictures/
-feh --bg-fill '~/Pictures/kaylesideansty.jpg' --bg-scale '~/Pictures/jap_alphabet.jpg'
+clear
+echo -e "--FEH--\nSetting wallpaper:\nExample: feh --bg-fill '~/Pictures/kaylesideansty.jpg' --bg-scale '~/Pictures/jap_alphabet.jpg'\n---\nPictures in Folder:"
+ls ~/Pictures/
+echo -e "\n\n Type your command to set wallpaper:"
+read WALLPAPER_COMMAND
+$WALLPAPER_COMMAND
+clear
 
 echo "MOCP TRANSPARENTE // SÓ FAZ SE MOCP ESTIVER INSTALADO"
 if [[ -f "/home/pk/.moc/config" ]]; then
@@ -129,11 +132,36 @@ cp -r -v ../config/picom ~/.config
 
 clear
 cat ../xinit-bashrc/.bashrc
-echo "bashrc personalizado? [Y/n]"
+echo "bashrc personalizado? [Y/n](Terminal with the colors)"
 read bashrc
 if [ $bashrc == "y" ]||[ $bashrc == "Y" ]||[ -z "$bashrc" ]; then
 	cp -v ../xinit-bashrc/.bashrc ~/
 fi
+
+#CONFIG FILES:
+
+mkdir ~/.config/polybar
+echo -e "--POLYBAR--\n1.Normal config files\n2.Your PC config files\n--------------[1/2]"
+read POLYBAR_ANSWER
+if [ $POLYBAR_ANSWER == "1" ];then
+	cp -v ../config/polybar/config_side.ini ~/.config/polybar/config.ini
+	cp -v ../config/polybar/launch_side.sh ~/.config/polybar/launch.sh
+	cp -r -v ../config/nvim/ ~/.config/
+	mkdir ~/.config/extra_config_files
+	cp -v ../config/extra_config_files/bspwm_smart_move
+	cp -v ../config/extra_config_files/bspwm_extra_side
+	chmod +x ~/.config/extra_config_files/bspwm_extra_side
+elif [ $POLYBAR_ANSWER == '2' ];then
+	cp -v ../config/polybar/config.ini ~/.config/polybar
+	cp -v ../config/polybar/launch.sh ~/.config/polybar
+	cp -r -v ../config/nvim/ ~/.config/
+	mkdir ~/.config/extra_config_files
+	cp -v ../config/extra_config_files/bspwm_smart_move
+	cp -v ../config/extra_config_files/bspwm_extra_exec
+	chmod +x ~/.config/extra_config_files/bspwm_smart_move
+	chmod +x ~/.config/extra_config_files/bspwm_extra_exec
+fi
+clear
 
 #TERMINATOR AND ALACRITTY config
 
@@ -142,13 +170,6 @@ if [ -f "/usr/bin/terminator" ]; then
 elif [ -f "/usr/bin/alacritty" ]; then 
 	cp -r -v ../config/alacritty ~/.config/
 fi
-
-#MOVING EXTRA CONFIG FILES
-
-cp -r -v ../config/nvim/ ~/.config/
-cp -r -v ../config/extra_config_files/ ~/.config/
-chmod +x ~/.config/extra_config_files/bspwm_smart_move
-chmod +x ~/.config/extra_config_files/bspwm_extra_exec
 
 #FIM
 
