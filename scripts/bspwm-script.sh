@@ -4,7 +4,7 @@
 
 sudo pacman -Syu
 echo "INSTALLANDO OS ESSENCIAIS"
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys
 clear
 echo "INSTALLING BASE-DEVELS"
 sudo pacman -S --needed base-devel
