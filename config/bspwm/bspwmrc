@@ -2,8 +2,8 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor HDMI-1 -d I II III IV V VI
-bspc monitor HDMI-2 -d VII VIII IX X
+bspc monitor HDMI-1 -d I II III IV V VI VII
+bspc monitor HDMI-2 -d VIII IX X
 
 bspc config border_width         2
 bspc config window_gap           12
@@ -31,7 +31,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a discord desktop='^10' state=floating rectangle=1230x724+1943+148
-#bspc rule -a Pcmanfm state=floating
+bspc rule -a Pcmanfm state=floating
 bspc rule -a mpv state=fullscreen
 bspc rule -a feh state=floating rectangle=1600x900+100+100
 bspc rule -a vlc state=floating
@@ -41,6 +41,7 @@ bspc rule -a Steam state=floating
 bspc rule -a zsnes state=fullscreen
 bspc rule -a lxappearance desktop='^8'
 bspc rule -a Lxappearance desktop='^8'
+bspc rule -a GParted state=floating
 #bspc rule -a terminator -o desktop='^10' state=floating rectangle 100x100+0+0 sticky=on
 
 ~/.fehbg &
@@ -49,5 +50,5 @@ xinput --set-prop 13 286 -1 &
 ~/.config/polybar/launch.sh &
 picom &
 /usr/bin/polkit-dumb-agent &
-sleep 2
+sleep 3
 bash ~/.config/extra_config_files/bspwm_extra_exec &
