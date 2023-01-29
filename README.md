@@ -225,7 +225,7 @@ sudo fstrim -v /home #run trim
 **13.PACKAGES AFTER INSTALL**
 ```bash
 sudo pacman -S unrar vlc mpv steam wine winetricks lutris tree
-yay -S cava peaclock alttab-git
+yay -S cava peaclock alttab-git polkit-dumb-agent-git
 ```
 
 ---
