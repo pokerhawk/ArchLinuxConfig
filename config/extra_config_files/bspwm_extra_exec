@@ -13,4 +13,16 @@ alttab &
 lxappearance &
 sleep 2
 killall -q lxappearance
+sleep 1
 xsetroot -cursor_name Sweet-cursors &
+sleep 0.5
+lxappearance &
+sleep 1
+killall -q lxappearance
+sleep 0.5
+dunst &
+sleep 0.5
+killall -q discord
+sleep 0.5
+discord &
+

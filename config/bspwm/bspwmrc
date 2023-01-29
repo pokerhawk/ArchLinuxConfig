@@ -2,8 +2,8 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor HDMI-1 -d I II III IV V VI VII
-bspc monitor HDMI-2 -d VIII IX X
+bspc monitor HDMI-1 -d I II III IV V VI
+bspc monitor HDMI-2 -d VII VIII IX X
 
 bspc config border_width         2
 bspc config window_gap           12
@@ -48,5 +48,6 @@ bspc rule -a Lxappearance desktop='^8'
 xinput --set-prop 13 286 -1 &
 ~/.config/polybar/launch.sh &
 picom &
-sleep 20
+/usr/bin/polkit-dumb-agent &
+sleep 2
 bash ~/.config/extra_config_files/bspwm_extra_exec &
