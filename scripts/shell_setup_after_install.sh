@@ -25,9 +25,9 @@ CURRENT_VM_SWAPPINESS=$(sysctl vm.swappiness | awk '{print $3}')
 
 sudo bash -c 'echo "set completion-ignore-case on" >> /etc/inputrc'
 echo "completion ignore case ON > inputrc"
-clear
 
-echo "Rofi will open, select a rofi theme"
+clear
+echo "Rofi will open, select a rofi theme:"
 sleep 3
 rofi-theme-selector
 echo "Rofi Theme selected"
@@ -69,6 +69,7 @@ makepkg -si
 echo "Want to install VSCode?[Y/n]"
 read vscode_answer
 if [ $vscode_answer == "Y" ]||[ $vscode_answer == "y" ]||[ -z "$vscode_answer" ]; then
+    clear
     yay -S visual-studio-code-bin
 fi
 

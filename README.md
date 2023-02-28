@@ -1,12 +1,16 @@
-# ArchLinuxConfig
+# ArchLinuxConfig 
+
+**Uso:**
 
 ```bash
 git clone https://github.com/pokerhawk/ArchLinuxConfig.git
 ```
 
-Se quiser isntalar "bspwm" entra na pasta "scripts" e executa "bspwm-script.sh"
- 
-Se quiser isntalar "i3" entra na pasta "scripts" e executa "i3-script.sh" // ##DEPRECATED
+Execute o arquivo bspwm-script.sh dentro da pasta scripts
+
+Após a instalação, caso queira configurar automaticamente, execute o arquivo shell_setup_after_install.sh na mesma pasta
+
+Caso contrário, siga as configurações abaixo:
 
 ---
 
