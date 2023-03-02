@@ -8,9 +8,9 @@ echo "Instalando WM(Window Manager) + programas padrões"
 echo "**************************************************"
 echo -e "\n\n\n"
 
-#sudo pacman -Syu
-#sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst
-#sudo pacman -S --needed base-devel
+sudo pacman -Syu
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager
+sudo pacman -S --needed base-devel
 clear
 
 echo -e "\n\n\n"
@@ -19,7 +19,7 @@ echo "Instalando fontes + libs (Recomendado)"
 echo "**************************************************"
 echo -e "\n\n\n"
 
-sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk
+sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk ttf-font-awesome
 clear
 
 echo -e "\n\n\n"

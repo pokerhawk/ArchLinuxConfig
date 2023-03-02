@@ -1,4 +1,4 @@
-# ArchLinuxConfig 
+# ARCHLINUXCONFIG
 
 **Uso:**
 
@@ -178,7 +178,7 @@ and change keybind for "terminal toggle".
 
 **10.FONTS**
 ```bash
-sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk
+sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk ttf-font-awesome
 yay -S nerd-fonts-meta
 ```
 ---
@@ -236,70 +236,60 @@ yay -S cava peaclock alttab-git polkit-dumb-agent-git
 
 ---
 
-# PACKAGES:
-  
-terminator ou Alacritty (terminal)
+**14.BASHRC COLORS AND POLYBAR CONFIGS**
 
-dmenu ou rofi (program launcher)
+Bashrc color numbers:
 
-ranger (file system on terminal)
+https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
-htop (monitor system on terminal)
+Polybar wiki:
 
-bpytop (monitor system on terminal)
+https://github.com/polybar/polybar/wiki
 
-MOCP (music on console) /pulseaudio-alsa (dep)
+---
 
-polybar (akela barra de cima e embaixo)
+# EXTRA CONFIGS:
 
-pcmanfm (program for file system like nautilus)
+**1.GPU OVERCLOCK**
 
-feh and nomacs (background wallpaper/imager viewer)
+```bash
+sudo nano /etc/default/grub
+```
 
-leafpad > emacs > gedit (editor de texto)
+Na linha:
 
-pulseaudio && pavucontrol (controlar audio)
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"
 
-vlc && mpv(music player)
+Da um espaço e coloca:
 
-lxappearance (configurar mouse sweet cursor)
+amdgpu.ppfeaturemask=0xffffffff
 
-picom (old compton - dexa as paradas transparente)
+Da update no grup:
+```bash
+sudo update-grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
 
-radeontop (display GPU statuses)
+Reinicie
 
-ttf-liberation(font)
+Comando para ver se adicionou corretamente:
 
-ffmpegthumbnailer (thumbnail nos videos)
+cat /proc/cmdline
 
-xinput-gui (mouse speed)
+---
 
-gufw (firewall GUI)
+**2.READ/WRITE SPEEDS**
 
-arandr (monitor config GUI)
+WRITE SPEED:
 
-ntfs-3g (to read ntfs files or windows files)
+dd if=/dev/zero of=./largefile bs=1M count=1024
 
-numlockx (activate numlock)
+CLEAN MEMORY CACHE:
 
-maim && xclip (printar tela)
+sudo sh -c "sync && echo 3 > /proc/sys/vm/drop_caches"
 
-unrar (for .rar files "unrar x <file>")
+READ SPEED:
 
-cava (audio thingy yay)
-
-peaclock (display time)
-
-openssh && sshfs (to remote access and mount remote-ssh devices)
-
-net-tools && gnu-netcat (tools pra internet) 
-
-# PROGRAMAS:
-  
-ani-cli
-
-sweet cursor (configura com lxappearance)
-
-Adwaita-dark theme
+dd if=./largefile of=/dev/null bs=4k
 
 ---
