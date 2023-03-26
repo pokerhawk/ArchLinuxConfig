@@ -10,7 +10,7 @@ echo -e "\n\n\n"
 
 sudo pacman -Syu
 sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager
-sudo pacman -S --needed base-devel
+sudo pacman -S --needed base-devel linux-headers
 clear
 
 echo -e "\n\n\n"
