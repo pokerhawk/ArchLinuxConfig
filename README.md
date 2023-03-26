@@ -293,3 +293,12 @@ READ SPEED:
 dd if=./largefile of=/dev/null bs=4k
 
 ---
+
+**3.MANGOHUD/GOVERLAY(GUI)**
+
+```bash
+yay -S mangohud-git lib32-mangohud-git
+yay -S goverlay-bin (or goverlay-git)
+
+
+---
