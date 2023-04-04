@@ -53,3 +53,7 @@ cmp.setup({
       { name = 'buffer' },
     })
   })
+
+--TERMINAL CONFIG
+
+require("toggleterm").setup()

@@ -32,6 +32,7 @@ call plug#begin()
 	Plug 'https://github.com/alvan/vim-closetag.git' " auto tag on HTML
 	Plug 'https://github.com/airblade/vim-gitgutter.git' " Show git diff + and - on file
 	Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
+	Plug 'https://github.com/akinsho/toggleterm.nvim', {'tag' : '*'} " Terminal on nvim
 	" AUTO COMPLETION LSP:
 	Plug 'https://github.com/neovim/nvim-lspconfig.git'
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
@@ -73,10 +74,13 @@ nnoremap <C-n> :TagbarToggle<CR>
 "nnoremap <C-h> :NERDTree /home/pk/.config/<CR>
 nnoremap <silent><Leader><Leader> :e /home/pk/.config/nvim/init.vim<CR>
 vnoremap <C-c> "+y
-nnoremap <C-'> :Terminal Toggle<CR>
 
 " TAB AUTO COMPLETE
 imap <Tab> <C-n>
+
+" TOGGLE TERMINAL
+nmap <C-Space> :ToggleTerm dir=:!<CR>
+nmap <S-e> :TermExec:! cmd="gcc % && ./a.out"<CR>
 
 " SHIFT + ARROW SELECT:
 
