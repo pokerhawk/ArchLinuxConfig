@@ -9,7 +9,7 @@ echo "**************************************************"
 echo -e "\n\n\n"
 
 sudo pacman -Syu
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock nomacs ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms
 sudo pacman -S --needed base-devel
 clear
 
@@ -146,9 +146,7 @@ fi
 #SXHKD
 clear
 mkdir ~/.config/sxhkd
-if [ -f '/usr/bin/alacritty' ]; then
-	cp -r -v ../config/sxhkd/sxhkdrc ~/.config/sxhkd
-fi
+cp -r -v ../config/sxhkd/sxhkdrc ~/.config/sxhkd
 clear
 
 #WALLPAPER, THEME AND PICOM ON MOCP
