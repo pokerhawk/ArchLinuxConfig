@@ -219,16 +219,18 @@ if [ $POLYBAR_ANSWER == "1" ];then
 	cp -v ../config/polybar/launch_side.sh ~/.config/polybar/launch.sh
 	cp -r -v ../config/nvim/ ~/.config/
 	mkdir ~/.config/extra_config_files
-	cp -v ../config/extra_config_files/bspwm_smart_move
-	cp -v ../config/extra_config_files/bspwm_extra_side
+	cp -v ../config/extra_config_files/bspwm_smart_move ~/.config/extra_config_files/
+	cp -v ../config/extra_config_files/bspwm_extra_side ~/.config/extra_config_files/
+	cp -v ../config/extra_config_files/bspwm_extra_exec ~/.config/extra_config_files/
 	chmod +x ~/.config/extra_config_files/bspwm_extra_side
 elif [ $POLYBAR_ANSWER == "2" ];then
 	cp -v ../config/polybar/config.ini ~/.config/polybar
 	cp -v ../config/polybar/launch.sh ~/.config/polybar
 	cp -r -v ../config/nvim/ ~/.config/
 	mkdir ~/.config/extra_config_files
-	cp -v ../config/extra_config_files/bspwm_smart_move
-	cp -v ../config/extra_config_files/bspwm_extra_exec
+	cp -v ../config/extra_config_files/bspwm_smart_move ~/.config/extra_config_files/
+	cp -v ../config/extra_config_files/bspwm_extra_exec ~/.config/extra_config_files/
+	cp -v ../config/extra_config_files/bspwm_extra_side ~/.config/extra_config_files/
 	chmod +x ~/.config/extra_config_files/bspwm_smart_move
 	chmod +x ~/.config/extra_config_files/bspwm_extra_exec
 fi
