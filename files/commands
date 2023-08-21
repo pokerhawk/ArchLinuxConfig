@@ -8,10 +8,12 @@ linux:
 ssh://pk@192.168.18.155 (connect via file manager)
 sshfs pk@192.168.18.155:/home/pk ~/Server/ (mount it via terminal/arch)
 
+##SSH REMOTE SHUTDOWN
+ssh -t -p 57 pk@192.168.18.155 'sudo poweroff'
+
 ##DUAL BOOT FIX##
 sudo os-prober (windows C: partition have to be mounted)
 sudo update-grub (yay -S update-grub)
 sudo nano /etc/default/grub
 uncomment line:
 #GRUB_DISABLE_OS_PROBER=false
-
