@@ -18,24 +18,23 @@ let maplocalleader = ' '
 
 call plug#begin()
 
-	Plug 'https://github.com/vim-airline/vim-airline' " that bar at the botton
-	Plug 'https://github.com/preservim/nerdtree' " the TREE accessed with Control+t
-	Plug 'https://github.com/tpope/vim-commentary' " quick keybind to comment -> gcc
+	Plug 'https://github.com/vim-airline/vim-airline.git' " that bar at the botton
+	Plug 'https://github.com/preservim/nerdtree.git' " the TREE accessed with Control+t
+	Plug 'https://github.com/tpope/vim-commentary.git' " quick keybind to comment -> gcc
 	Plug 'https://github.com/preservim/tagbar.git' " to see all arguments and locate them // dep -> ctags (pacman -S ctags)
 	Plug 'https://github.com/ryanoasis/vim-devicons' " icons for the TREE
 	Plug 'https://github.com/tanvirtin/monokai.nvim.git' " monokai colorscheme theme
-	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " give lines that connect the brackets (easier to see)
-	Plug 'https://github.com/luochen1990/rainbow.git' " give brackets matching colors
+	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " give lines that connect the brackets (easier to see)
+	Plug 'https://github.com/junegunn/rainbow_parentheses.vim.git' " give brackets matching colors
 	Plug 'https://github.com/sheerun/vim-polyglot.git' " syntax highlighting
-	Plug 'https://github.com/jiangmiao/auto-pairs' " auto close brackets
-	Plug 'https://github.com/mattn/emmet-vim' " HTML auto make
-	Plug 'https://github.com/alvan/vim-closetag' " auto tag on HTML
-	Plug 'https://github.com/airblade/vim-gitgutter' " Show git diff + and - on file
-	" Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
-	Plug 'https://github.com/akinsho/toggleterm.nvim', {'tag' : '*'} " Terminal on nvim
+	Plug 'https://github.com/jiangmiao/auto-pairs.git' " auto close brackets
+	Plug 'https://github.com/mattn/emmet-vim.git' " HTML auto make
+	Plug 'https://github.com/alvan/vim-closetag.git' " auto tag on HTML
+	Plug 'https://github.com/airblade/vim-gitgutter.git' " Show git diff + and - on file
+	Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
 	" AUTO COMPLETION LSP:
-	Plug 'https://github.com/neovim/nvim-lspconfig'
-	Plug 'https://github.com/williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+	Plug 'https://github.com/neovim/nvim-lspconfig.git'
+	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
 	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
 	Plug 'https://github.com/hrsh7th/nvim-cmp'
 	Plug 'https://github.com/hrsh7th/cmp-nvim-lsp'
@@ -67,20 +66,17 @@ inoremap <A-Down> <ESC>:m+<CR>
 
 " NERD TREE KEYBINDS
 nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle %:p:h<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-n> :TagbarToggle<CR>
 "nnoremap <C-b> :NERDTree /home/pk/<CR>
 "nnoremap <C-n> :NERDTree /run/media/HDD/Workspace<CR>
 "nnoremap <C-h> :NERDTree /home/pk/.config/<CR>
 nnoremap <silent><Leader><Leader> :e /home/pk/.config/nvim/init.vim<CR>
 vnoremap <C-c> "+y
+nnoremap <C-'> :Terminal Toggle<CR>
 
 " TAB AUTO COMPLETE
 imap <Tab> <C-n>
-
-" TOGGLE TERMINAL
-nmap <C-Space> :ToggleTerm dir=:!<CR>
-nmap <S-e> :TermExec:! cmd="gcc % && ./a.out"<CR>
 
 " SHIFT + ARROW SELECT:
 
