@@ -15,15 +15,6 @@ clear
 
 echo -e "\n\n\n"
 echo "**************************************************"
-echo "Instalando Vulkan Drivers"
-echo "**************************************************"
-echo -e "\n\n\n"
-
-sudo pacman -S lib32-amdvlk lib32-vulkan-icd-loader vulkan-icd-loader
-clear
-
-echo -e "\n\n\n"
-echo "**************************************************"
 echo "Instalando fontes + libs (Recomendado)"
 echo "**************************************************"
 echo -e "\n\n\n"
@@ -117,11 +108,22 @@ fi
 clear
 echo -e "\n\n\n"
 echo "**************************************************"
-echo "Instalando drives para lutris/wine/steam"
+echo "Instalando Drivers"
 echo "**************************************************"
 echo -e "\n\n\n"
-sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
-clear
+echo "Qual placa de Video seu PC tem?"
+echo "[AMD/Intel/NVidia]"
+read gputype
+if [ $gputype == "AMD" ]||[ $gputype == "amd" ];then
+	sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon lib32-amdvlk vulkan-icd-loader lib32-vulkan-icd-loader
+	clear
+elif [ $gputype == "Intel" ]||[ $gputype == "intel" ];then
+	sudo pacman -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+	clear
+elif [ $gputype == "NVidia" ]||[ $gputype == "nvidia" ];then
+	sudo pacman -S --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+	clear
+fi
 
 # MOVENDO XINIT
 clear
