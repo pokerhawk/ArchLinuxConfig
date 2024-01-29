@@ -86,3 +86,7 @@ if [ -f '/home/$USER/.config/Code/' ];then
         "editor.fontLigatures": false
     }" > ~/.config/Code/User/settings.json
 fi
+
+#Setting time
+sudo ntpd -qg
+sudo hwclock --systohc
