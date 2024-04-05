@@ -1,5 +1,0 @@
-nmcli dev status
-nmcli radio wifi
-nmcli radio wifi on
-nmcli dev wifi list
-sudo nmcli dev wifi connect "network" password "password"
