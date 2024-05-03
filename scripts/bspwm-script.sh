@@ -144,14 +144,12 @@ echo "Qual opção? [1/2/3]"
 read bspwmconfig
 if [ $bspwmconfig == "1" ]; then
 	sudo cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+	sleep 1
 	echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
-	clear
 elif [ $bspwmconfig == "2" ]; then
-	sudo cp -v ../config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
-	clear
+	sudo cp -v ../config/bspwm/bspwmrc_config_2_screen ~/.config/bspwm/bspwmrc
 elif [ $bspwmconfig == "3" ];then
-	sudo cp -v ../config/bspwm/bspwmrc_side ~/.config/bspwm/bspwmrc
-	clear
+	sudo cp -v ../config/bspwm/bspwmrc_notebook ~/.config/bspwm/bspwmrc
 fi
 
 #SXHKD
@@ -173,10 +171,10 @@ echo "--------------------------------------------------"
 ls ~/Pictures/
 echo "--------------------------------------------------"
 echo -e "\n\nExamplo de comando: feh --bg-fill '~/Pictures/kaylesideansty.jpg' --bg-scale '~/Pictures/jap_alphabet.jpg'\n"
-echo -e "Escreva o comando para ser guardado em ~/.fehbg:\n"
+echo -e "Escolha um wallpaper: (Ex.: jap_alphabet.jpg)\n"
 
-read WALLPAPER_COMMAND
-echo "$WALLPAPER_COMMAND" >> ~/.fehbg
+read WALLPAPER
+echo "feh --bg-fill '$USER/Pictures/$WALLPAPER'" >> ~/.fehbg
 sudo chmod 754 ~/.fehbg #  4 = r(Read)  //  2 = w(Write)  //  1 = x(eXecute)
 clear
 

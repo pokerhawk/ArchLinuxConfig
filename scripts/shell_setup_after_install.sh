@@ -40,7 +40,7 @@ sudo pacman -Sy
 clear
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 sleep 7
 echo "We will open Nvim, type :PlugInstall then :q!"
 nvim

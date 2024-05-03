@@ -1,0 +1,79 @@
+#unfocused_hollow = true
+
+[colors]
+transparent_background_colors = true
+
+[colors.bright]
+black = "#666666"
+blue = "#7aa6da"
+cyan = "#10dce3"
+green = "#b9ca4a"
+magenta = "#c397d8"
+red = "#d54e53"
+white = "#eaeaea"
+yellow = "#e7c547"
+
+[colors.dim]
+black = "#131415"
+blue = "#556a7d"
+cyan = "#5b7d78"
+green = "#777c44"
+magenta = "#75617b"
+red = "#864343"
+white = "#828482"
+yellow = "#9e824c"
+
+[colors.normal]
+black = "#000000"
+blue = "#1a5fb4"
+cyan = "#06989a"
+green = "#4e9a06"
+magenta = "#ff008c"
+red = "#cc0000"
+white = "#ffffff"
+yellow = "#c4a000"
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[cursor]
+blink_interval = 400
+
+[cursor.style]
+blinking = "Always"
+shape = "Underline"
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "source code pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "source code pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "source code pro"
+style = "Italic"
+
+[font.normal]
+family = "source code pro"
+style = "Bold"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "Up"
+mode = "~Alt"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "Down"
+mode = "~Alt"
+mods = "Shift|Control"
+
+[window]
+opacity = 0.7
