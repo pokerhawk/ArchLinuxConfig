@@ -77,7 +77,7 @@ fi
 
 mkdir ~/.moc
 cp -v $repo_DIR/config/moc/config ~/.moc/config
-cp -v $repo_DIR/config/monokai_colorscheme/monokai.lua ~/.local/share/nvim/plugged/monokai.nvim/monokai.lua
+cp -v $repo_DIR/config/monokai_colorscheme/monokai.lua ~/.local/share/nvim/plugged/monokai.nvim/lua/monokai.lua
 if [ -f '/home/$USER/.config/Code/' ];then
     echo "{
         "workbench.colorTheme": "Monokai",
