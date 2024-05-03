@@ -22,6 +22,9 @@ echo -e "\n\n\n"
 sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk ttf-font-awesome
 clear
 
+echo -e "\n\n\nNerd Fonts (BIG):\n\n\n"
+sudo pacman -S nerd-fonts
+
 echo -e "\n\n\n"
 echo "**************************************************"
 echo "INSTALLING LOLCAT"
