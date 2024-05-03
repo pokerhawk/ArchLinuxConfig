@@ -9,6 +9,7 @@ set number
 :set smarttab
 :set softtabstop=5
 :set mouse=a
+:set modifiable
 
 "SETTING MAPLEADER TO SPACEBAR:
 let mapleader = ' '
@@ -33,13 +34,14 @@ call plug#begin()
 	Plug 'https://github.com/airblade/vim-gitgutter.git' " Show git diff + and - on file
 	Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
 	" AUTO COMPLETION LSP:
-	Plug 'https://github.com/neovim/nvim-lspconfig.git'
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
 	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
+	Plug 'https://github.com/neovim/nvim-lspconfig.git'
 	Plug 'https://github.com/hrsh7th/nvim-cmp'
 	Plug 'https://github.com/hrsh7th/cmp-nvim-lsp'
 	Plug 'https://github.com/L3MON4D3/LuaSnip'
 	Plug 'https://github.com/VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
+	Plug 'https://github.com/akinsho/toggleterm.nvim.git'
 
 call plug#end()
 
@@ -73,7 +75,7 @@ nnoremap <C-n> :TagbarToggle<CR>
 "nnoremap <C-h> :NERDTree /home/pk/.config/<CR>
 nnoremap <silent><Leader><Leader> :e /home/pk/.config/nvim/init.vim<CR>
 vnoremap <C-c> "+y
-nnoremap <C-'> :Terminal Toggle<CR>
+nnoremap <C-'> :ToggleTerm<CR>
 
 " TAB AUTO COMPLETE
 imap <Tab> <C-n>
