@@ -1,0 +1,8 @@
+Install nginx and start it's service
+make sure apache2 is not running/enable in services
+
+Config files located at:
+
+/var/www/
+/etc/nginx/sites-available #dont need this, could use:
+/etc/nginx/sites-enabled/yourdomain.xyz <-- #config file
