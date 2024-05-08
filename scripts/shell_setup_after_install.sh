@@ -73,6 +73,15 @@ if [ $vscode_answer == "Y" ]||[ $vscode_answer == "y" ]||[ -z "$vscode_answer" ]
     yay -S visual-studio-code-bin
 fi
 
+#Config Bluetooth
+
+clear
+echo -e "\n\n\nUncomment #AutoEnable=true"
+sleep 2
+sudo nano /etc/bluetooth/main.conf
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+
 #Moving files:
 
 mkdir ~/.moc

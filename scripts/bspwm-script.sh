@@ -24,6 +24,16 @@ clear
 
 echo -e "\n\n\nNerd Fonts (BIG):\n\n\n"
 sudo pacman -S nerd-fonts
+clear
+
+echo -e "\n\n\n"
+echo "**************************************************"
+echo "INSTALLING BLUETOOTH"
+echo "**************************************************"
+echo -e "\n\n\n"
+
+sudo pacman -S bluez bluez-tools bluez-utils blueman
+
 
 echo -e "\n\n\n"
 echo "**************************************************"
