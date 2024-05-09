@@ -65,6 +65,7 @@ sudo pacman -S go git moc alsa-utils pulseaudio-alsa nano-syntax-highlighting un
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+rm -rf yay
 
 echo "Want to install VSCode?[Y/n]"
 read vscode_answer
