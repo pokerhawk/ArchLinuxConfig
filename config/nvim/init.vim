@@ -33,6 +33,8 @@ call plug#begin()
 	Plug 'https://github.com/alvan/vim-closetag.git' " auto tag on HTML
 	Plug 'https://github.com/airblade/vim-gitgutter.git' " Show git diff + and - on file
 	Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
+	Plug 'https://github.com/nvim-telescope/telescope.nvim.git' " Fuzzy finder (lupa)
+	Plug 'https://github.com/ThePrimeagen/harpoon.git' " Mark files to quick access
 	" AUTO COMPLETION LSP:
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
 	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
@@ -51,16 +53,20 @@ call plug#end()
 "vmap = select mode map
 "nnoremap, inoremap, vnoremap ignore all mappings and does default map
 
-" KEY BINDS:
+" KEY BINDS
 
 "nmap j <Up>
 "nmap k <Down>
 noremap <C-j> 5j
 noremap <C-k> 5k
 
+" TELESCOPE
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
-
-" MOVING LINES WITH ALTKEY:
+" MOVING LINES WITH ALTKEY
 nmap <A-Up> :m .-2<CR> 
 nmap <A-Down> :m+<CR>
 inoremap <A-Up> <ESC>:m .-2<CR>
