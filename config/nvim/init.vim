@@ -10,6 +10,7 @@ set number
 :set softtabstop=5
 :set mouse=a
 :set modifiable
+:set signcolumn=yes
 
 "SETTING MAPLEADER TO SPACEBAR:
 let mapleader = ' '
@@ -62,13 +63,23 @@ noremap <C-j> 5j
 noremap <C-k> 5k
 noremap <C-h> 5h
 noremap <C-l> 5l
-"nmap <C-]> :horizontal stag <cword><CR>
+nnoremap <C-.> :lua vim.diagnostic.open_float()<CR>
+nnoremap <leader><leader>r :source $MYVIMRC<CR>
+" nnoremap <C-]><cmd>:horizontal stag <cword><CR>
 
 " TELESCOPE
 nnoremap <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+
+" Vim Script
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " MOVING LINES WITH ALTKEY:
 nmap <A-Up> :m .-2<CR> 
@@ -83,8 +94,9 @@ nnoremap <C-n> :TagbarToggle<CR>
 "nnoremap <C-b> :NERDTree /home/pk/<CR>
 "nnoremap <C-n> :NERDTree /run/media/HDD/Workspace<CR>
 "nnoremap <C-h> :NERDTree /home/pk/.config/<CR>
-nnoremap <silent><Leader><Leader> :e /home/pk/.config/nvim/init.vim<CR>
+nnoremap <silent><Leader><Leader><Leader> :e /home/pk/.config/nvim/init.vim<CR>
 vnoremap <C-c> "+y
+vnoremap <C-S-v> "+p
 nnoremap <C-'> :ToggleTerm<CR>
 
 " TAB AUTO COMPLETE
