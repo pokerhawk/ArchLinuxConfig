@@ -1,5 +1,4 @@
 "INITIAL CONFIG
-
 set number
 " :set relativenumber
 " :colorscheme monokai " elflord, desert, delek and another one down there
@@ -10,7 +9,8 @@ set number
 :set softtabstop=5
 :set mouse=a
 :set modifiable
-:set signcolumn=yes
+:set foldmethod=indent
+" :set foldmethod=syntax
 
 "SETTING MAPLEADER TO SPACEBAR:
 let mapleader = ' '
@@ -65,6 +65,7 @@ noremap <C-h> 5h
 noremap <C-l> 5l
 nnoremap <C-.> :lua vim.diagnostic.open_float()<CR>
 nnoremap <leader><leader>r :source $MYVIMRC<CR>
+nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
 " nnoremap <C-]><cmd>:horizontal stag <cword><CR>
 
 " TELESCOPE
@@ -73,7 +74,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
-" Vim Script
+" TROUBLE TOGGLE
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
 nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
