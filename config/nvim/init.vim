@@ -70,8 +70,8 @@ nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
 " nnoremap <C-]><cmd>:horizontal stag <cword><CR>
 
 " TELESCOPE
-nnoremap <leader>tt <cmd>Telescope find_files<CR>
-nnoremap <leader>tg <cmd>Telescope live_grep<CR>
+nnoremap <leader>tp <cmd>Telescope find_files<CR>
+nnoremap <leader>tt <cmd>Telescope live_grep<CR>
 nnoremap <leader>tb <cmd>Telescope buffers<CR>
 nnoremap <leader>th <cmd>Telescope help_tags<CR>
 nnoremap <expr> <leader>fd ':Telescope find_files<cr>' . expand('<cword>')
@@ -81,7 +81,7 @@ nnoremap <expr> <leader>ff ':Telescope live_grep<cr>' . expand('<cword>')
 " HARPOON
 
 nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
-nnoremap <leader>ht :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>hi :lua require("harpoon.ui").nav_next()<CR>
 nnoremap <leader>ho :lua require("harpoon.ui").nav_prev()<CR>
 "nnoremap <leader>hh :lua require("harpoon.term").gotoTerminal(1)<CR>
