@@ -129,7 +129,6 @@ nnoremap <C-'> :ToggleTerm<CR>
 imap <S-Tab> <C-d>
 
 " SHIFT + ARROW SELECT:
-
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
 nmap <S-Left> v<Left>
@@ -142,6 +141,20 @@ imap <S-Up> <Esc>v<Up>
 imap <S-Down> <Esc>v<Down>
 imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>
+" hjkl
+nmap <S-k> v<Up>
+nmap <S-j> v<Down>
+nmap <S-h> v<Left>
+nmap <S-l> v<Right>
+vmap <S-k> <Up>
+vmap <S-j> <Down>
+vmap <S-h> <Left>
+vmap <S-l> <Right>
+imap <S-k> <Esc>v<Up>
+imap <S-j> <Esc>v<Down>
+imap <S-h> <Esc>v<Left>
+imap <S-l> <Esc>v<Right>
+
 
 " let g:user_emmet_leader_key=','
 let g:NERDTreeDirArrowExpandable="+"
