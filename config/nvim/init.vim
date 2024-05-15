@@ -61,8 +61,6 @@ call plug#end()
 
 " KEY BINDS:
 
-"nmap j <Up>
-"nmap k <Down>
 noremap <C-j> 5j
 noremap <C-k> 5k
 noremap <C-h> 5h
@@ -71,6 +69,9 @@ nnoremap <C-.> :lua vim.diagnostic.open_float()<CR>
 nnoremap <leader><leader>r :source $MYVIMRC<CR>
 nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
 " nnoremap <C-]><cmd>:horizontal stag <cword><CR>
+
+" Substitui todas as palavras iguais:
+nnoremap <silent> <C-l> :%s/\<<c-r><c-w>\>//g<Left><Left>
 
 " TELESCOPE
 nnoremap <leader>tp <cmd>Telescope find_files<CR>
@@ -99,11 +100,17 @@ nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
-" MOVING LINES WITH ALTKEY:
-nmap <A-Up> :m .-2<CR> 
-nmap <A-Down> :m+<CR>
-inoremap <A-Up> <ESC>:m .-2<CR>
-inoremap <A-Down> <ESC>:m+<CR>
+" Move line(s) up
+nnoremap <A-k> :m-2<CR>==
+vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-Up> :m-2<CR>==
+vnoremap <A-Up> :m '<-2<CR>gv=gv
+
+" Move line(s) down
+nnoremap <A-j> :m+<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+nnoremap <A-Down> :m+<CR>==
+vnoremap <A-Down> :m '>+1<CR>gv=gv
 
 " NERD TREE KEYBINDS
 nnoremap <C-f> :NERDTreeFocus<CR>
