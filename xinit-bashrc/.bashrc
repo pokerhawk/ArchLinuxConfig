@@ -20,10 +20,9 @@ fi
 #\u	username of current user
 #\w	path to current working directory
 
-alias hd='cd /run/media/HDD/'
-alias home='cd ~'
 alias vim='nvim'
-alias vi='nvim'
+alias vi='nvim ./'
+alias token='cat /home/$USER/Documents/token | xclip -selection clipboard'
 alias ll='ls -o --color=auto'
 alias ls='ls --color=auto'
 
