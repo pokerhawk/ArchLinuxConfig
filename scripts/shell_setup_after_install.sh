@@ -93,8 +93,10 @@ if [ -f '/home/$USER/.config/Code/' ];then
         "workbench.colorTheme": "Monokai",
         "editor.fontFamily": "Source Code Pro",
         "editor.fontWeight": "bold",
-        "editor.fontLigatures": false
-    }" > ~/.config/Code/User/settings.json
+        "editor.fontLigatures": false,
+        "workbench.iconTheme": "material-icon-theme",
+        "explorer.confirmDelete": false
+    }" > /home/$USER/.config/Code/User/settings.json
 fi
 
 #Setting time
