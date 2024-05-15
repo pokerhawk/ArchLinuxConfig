@@ -70,10 +70,13 @@ nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
 " nnoremap <C-]><cmd>:horizontal stag <cword><CR>
 
 " TELESCOPE
-nnoremap <leader>ff <cmd>Telescope find_files<CR>
-nnoremap <leader>fg <cmd>Telescope live_grep<CR>
-nnoremap <leader>fb <cmd>Telescope buffers<CR>
-nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+nnoremap <leader>tt <cmd>Telescope find_files<CR>
+nnoremap <leader>tg <cmd>Telescope live_grep<CR>
+nnoremap <leader>tb <cmd>Telescope buffers<CR>
+nnoremap <leader>th <cmd>Telescope help_tags<CR>
+nnoremap <expr> <leader>fd ':Telescope find_files<cr>' . expand('<cword>')
+
+nnoremap <expr> <leader>ff ':Telescope live_grep<cr>' . expand('<cword>')
 
 " HARPOON
 
