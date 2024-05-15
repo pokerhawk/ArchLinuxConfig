@@ -10,6 +10,7 @@ set number
 :set mouse=a
 :set modifiable
 :set foldmethod=indent
+
 " :set foldmethod=syntax
 
 "SETTING MAPLEADER TO SPACEBAR:
@@ -37,6 +38,7 @@ call plug#begin()
 	Plug 'https://github.com/nvim-lua/plenary.nvim.git' " Dep of telescope
 	Plug 'https://github.com/ThePrimeagen/harpoon.git' " Mark files to quick access
 	Plug 'https://github.com/folke/trouble.nvim.git' " Display error correction with control + space
+	Plug 'https://github.com/nvim-tree/nvim-web-devicons.git' "dep for something
 	"Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
 	" AUTO COMPLETION LSP:
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
