@@ -27,6 +27,7 @@ call plug#begin()
 	Plug 'https://github.com/preservim/tagbar.git' " to see all arguments and locate them // dep -> ctags (pacman -S ctags)
 	Plug 'https://github.com/ryanoasis/vim-devicons' " icons for the TREE
 	Plug 'https://github.com/tanvirtin/monokai.nvim.git' " monokai colorscheme theme
+	Plug 'https://github.com/polirritmico/monokai-nightasty.nvim.git' " monokai-nightasty colorscheme
 	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " give lines that connect the brackets (easier to see)
 	Plug 'https://github.com/junegunn/rainbow_parentheses.vim.git' " give brackets matching colors
 	Plug 'https://github.com/sheerun/vim-polyglot.git' " syntax highlighting
@@ -142,11 +143,11 @@ let g:NERDTreeDirArrowCollapsible="~"
 " SYNTAX(COLOR) AND COLORSCHEME:
 
 syntax on
-colorscheme monokai
-colorscheme monokai_pro
-colorscheme monokai_soda
-colorscheme monokai_ristretto
-:colorscheme monokai 
+" colorscheme monokai
+" colorscheme monokai_pro
+" colorscheme monokai_soda
+" colorscheme monokai_ristretto
+:colorscheme monokai-nightasty
 
 
 " END
