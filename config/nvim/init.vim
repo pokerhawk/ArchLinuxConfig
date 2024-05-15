@@ -33,7 +33,8 @@ call plug#begin()
 	Plug 'https://github.com/mattn/emmet-vim.git' " HTML auto make
 	Plug 'https://github.com/alvan/vim-closetag.git' " auto tag on HTML
 	Plug 'https://github.com/airblade/vim-gitgutter.git' " Show git diff + and - on file
-	Plug 'https://github.com/nvim-telescope/telescope.nvim.git' " Fuzzy finder (lupa)
+	Plug 'https://github.com/nvim-telescope/telescope.nvim.git' " Fuzzy finder (lupa) dep -> plenary.nvim and pacman -S ripgrep
+	Plug 'https://github.com/nvim-lua/plenary.nvim.git' " Dep of telescope
 	Plug 'https://github.com/ThePrimeagen/harpoon.git' " Mark files to quick access
 	Plug 'https://github.com/folke/trouble.nvim.git' " Display error correction with control + space
 	"Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
@@ -73,6 +74,16 @@ nnoremap <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+
+" HARPOON
+
+nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>ht :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>hi :lua require("harpoon.ui").nav_next()<CR>
+nnoremap <leader>ho :lua require("harpoon.ui").nav_prev()<CR>
+"nnoremap <leader>hh :lua require("harpoon.term").gotoTerminal(1)<CR>
+"nnoremap <leader>hb :lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>
+"nnoremap <leader>hg :lua require("harpoon.term").sendCommand(1, 1)<CR>
 
 " TROUBLE TOGGLE
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
