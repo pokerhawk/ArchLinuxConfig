@@ -147,11 +147,6 @@ vmap <S-k> <Up>
 vmap <S-j> <Down>
 vmap <S-h> <Left>
 vmap <S-l> <Right>
-imap <S-k> <Esc>v<Up>
-imap <S-j> <Esc>v<Down>
-imap <S-h> <Esc>v<Left>
-imap <S-l> <Esc>v<Right>
-
 
 " let g:user_emmet_leader_key=','
 let g:NERDTreeDirArrowExpandable="+"
