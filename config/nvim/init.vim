@@ -74,7 +74,8 @@ nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
 nnoremap <silent> <leader> <C-l> :%s/\<<c-r><c-w>\>//g<Left><Left>
 
 " TELESCOPE
-nnoremap <leader>tp <cmd>lua require("telescope.builtin").find_files({hidden = true})<CR>
+nnoremap <leader>tp <cmd>Telescope find_files<CR>
+nnoremap <leader><leader>tp <cmd>lua require("telescope.builtin").find_files({hidden = true})<CR>
 nnoremap <leader>tt <cmd>Telescope live_grep<CR>
 nnoremap <leader>tb <cmd>Telescope buffers<CR>
 nnoremap <leader>th <cmd>Telescope help_tags<CR>
@@ -123,10 +124,6 @@ nnoremap <silent><Leader><Leader><Leader> :e /home/pk/.config/nvim/init.vim<CR>
 vnoremap <C-c> "+y
 vnoremap <C-S-v> "+p
 nnoremap <C-'> :ToggleTerm<CR>
-
-" TAB AUTO COMPLETE
-"inoremap <Tab> <C-n>
-imap <S-Tab> <C-d>
 
 " SHIFT + ARROW SELECT:
 nmap <S-Up> v<Up>
