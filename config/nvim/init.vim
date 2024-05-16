@@ -71,10 +71,10 @@ nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
 " nnoremap <C-]><cmd>:horizontal stag <cword><CR>
 
 " Substitui todas as palavras iguais:
-nnoremap <silent> <C-l> :%s/\<<c-r><c-w>\>//g<Left><Left>
+nnoremap <silent> <leader> <C-l> :%s/\<<c-r><c-w>\>//g<Left><Left>
 
 " TELESCOPE
-nnoremap <leader>tp <cmd>Telescope find_files<CR>
+nnoremap <leader>tp <cmd>lua require("telescope.builtin").find_files({hidden = true})<CR>
 nnoremap <leader>tt <cmd>Telescope live_grep<CR>
 nnoremap <leader>tb <cmd>Telescope buffers<CR>
 nnoremap <leader>th <cmd>Telescope help_tags<CR>
