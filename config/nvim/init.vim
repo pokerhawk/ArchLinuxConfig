@@ -41,6 +41,7 @@ call plug#begin()
 	Plug 'https://github.com/folke/trouble.nvim.git' " Display error correction with control + space
 	Plug 'https://github.com/nvim-tree/nvim-web-devicons.git' "dep for something
 	"Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
+	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " add indent line
 	" AUTO COMPLETION LSP:
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
 	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
@@ -160,6 +161,6 @@ syntax on
 " colorscheme monokai_soda
 " colorscheme monokai_ristretto
 :colorscheme monokai-nightasty
-
+:lua require("ibl").setup()
 
 " END
