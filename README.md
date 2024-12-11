@@ -248,6 +248,16 @@ https://github.com/polybar/polybar/wiki
 
 ---
 
+**14.DOCKER PERMISSIONS**
+
+```bash
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
+$ newgrp docker
+```
+
+---
+
 # EXTRA CONFIGS:
 
 **1.GPU OVERCLOCK**
