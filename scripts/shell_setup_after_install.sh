@@ -46,6 +46,7 @@ echo "We will open Nvim, type :PlugInstall then :q!"
 nvim
 cd ~/.local/share/nvim/plugged/coc.nvim/
 sudo npm install -g yarn
+sudo pacman -S ripgrep
 yarn install
 yarn build
 
