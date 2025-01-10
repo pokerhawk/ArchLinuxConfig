@@ -6,8 +6,9 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 #bspc monitor HDMI-1 -d I II III IV V VI VII
 #bspc monitor HDMI-2 -d VIII IX X
-bspc monitor HDMI-1 -d 1 2 3 4 5 6 7
-bspc monitor HDMI-2 -d 8 9 10
+bspc monitor HDMI-1 -d 8 9 10
+bspc monitor DP-3 -d 1 2 3 4 5 6 7
+#bspc monitor HDMI-1 -d 8 9 10
 
 bspc config border_width         2
 bspc config window_gap           12
@@ -55,10 +56,11 @@ bspc rule -a nomacs state=floating
 
 ##ADDED CONFIGS##
 
+bash ~/.screenlayout/monitor-setup.sh &
 /usr/bin/numlockx on &
-xinput --set-prop 13 289 -1 &
+xinput --set-prop 8 312 -0.8 &
 ~/.config/polybar/launch.sh &
 picom &
 /usr/bin/polkit-dumb-agent &
-sleep 3
 bash ~/.config/extra_config_files/bspwm_extra_exec &
+systemctl start NetworkManager &
