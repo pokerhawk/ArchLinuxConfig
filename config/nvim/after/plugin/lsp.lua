@@ -1,7 +1,7 @@
 -- REQUIRE VARIABLES --
 require("mason").setup()
 require("mason-lspconfig").setup({
-   ensure_installed = { "clangd", "cpplint", "eslint-lsp", "eslint_d", "glint", "prisma-language-server" }
+   ensure_installed = {}
 })
 local lsp = require('lsp-zero').preset({})
 local cmp = require("cmp")
