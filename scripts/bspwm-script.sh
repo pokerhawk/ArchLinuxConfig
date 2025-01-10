@@ -161,6 +161,7 @@ if [ $bspwmconfig == "1" ]; then
 	echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
 elif [ $bspwmconfig == "2" ]; then
 	sudo cp -v ../config/bspwm/bspwmrc_config_2_screen ~/.config/bspwm/bspwmrc
+	sudo cp -v -r ../config/screenlayout ~/.screenlayout
 elif [ $bspwmconfig == "3" ];then
 	sudo cp -v ../config/bspwm/bspwmrc_notebook ~/.config/bspwm/bspwmrc
 fi

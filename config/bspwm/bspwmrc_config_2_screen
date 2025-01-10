@@ -63,4 +63,3 @@ xinput --set-prop 8 312 -0.8 &
 picom &
 /usr/bin/polkit-dumb-agent &
 bash ~/.config/extra_config_files/bspwm_extra_exec &
-systemctl start NetworkManager &
