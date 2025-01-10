@@ -10,6 +10,7 @@ set number
 :set mouse=a
 :set modifiable
 :set foldmethod=indent
+" za fold and unfold
 
 " :set foldmethod=syntax
 
@@ -26,8 +27,11 @@ call plug#begin()
 	Plug 'https://github.com/tpope/vim-commentary.git' " quick keybind to comment -> gcc
 	Plug 'https://github.com/preservim/tagbar.git' " to see all arguments and locate them // dep -> ctags (pacman -S ctags)
 	Plug 'https://github.com/ryanoasis/vim-devicons' " icons for the TREE
+
+	" Color Schemes
 	Plug 'https://github.com/tanvirtin/monokai.nvim.git' " monokai colorscheme theme
 	Plug 'https://github.com/polirritmico/monokai-nightasty.nvim.git' " monokai-nightasty colorscheme
+
 	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " give lines that connect the brackets (easier to see)
 	Plug 'https://github.com/junegunn/rainbow_parentheses.vim.git' " give brackets matching colors
 	Plug 'https://github.com/sheerun/vim-polyglot.git' " syntax highlighting
@@ -39,6 +43,7 @@ call plug#begin()
 	Plug 'https://github.com/nvim-lua/plenary.nvim.git' " Dep of telescope
 	Plug 'https://github.com/ThePrimeagen/harpoon.git' " Mark files to quick access
 	Plug 'https://github.com/folke/trouble.nvim.git' " Display error correction with control + space
+	Plug 'https://github.com/junegunn/fzf.vim.git' "Display error correction
 	Plug 'https://github.com/nvim-tree/nvim-web-devicons.git' "dep for something
 	"Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
 	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " add indent line
@@ -67,7 +72,11 @@ noremap <C-k> 5k
 noremap <C-h> 5h
 noremap <C-l> 5l
 nnoremap <C-.> :lua vim.diagnostic.open_float()<CR>
+
+"Reload this file
 nnoremap <leader><leader>r :source $MYVIMRC<CR>
+
+" Command to replace a instance word then find other instances with dot (.)
 nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
 " nnoremap <C-]><cmd>:horizontal stag <cword><CR>
 
@@ -95,12 +104,12 @@ nnoremap <leader>ho :lua require("harpoon.ui").nav_prev()<CR>
 "nnoremap <leader>hg :lua require("harpoon.term").sendCommand(1, 1)<CR>
 
 " TROUBLE TOGGLE
-nnoremap <leader>xx <cmd>TroubleToggle<cr>
-nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
-nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
-nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
-nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+nnoremap <leader>xx <cmd>Trouble diagnostics toggle<cr>
+" nnoremap <leader>xw <cmd>Trouble workspace_diagnostics toggle<cr>
+" nnoremap <leader>xd <cmd>Trouble document_diagnostics<cr>
+nnoremap <leader>xq <cmd>Trouble quickfix toggle<cr>
+nnoremap <leader>xl <cmd>Trouble loclist toggle<cr>
+nnoremap gR <cmd>Trouble lsp_references<cr>
 
 " Move line(s) up
 nnoremap <A-k> :m-2<CR>==
@@ -162,5 +171,6 @@ syntax on
 " colorscheme monokai_ristretto
 :colorscheme monokai-nightasty
 :lua require("ibl").setup()
+:lua require("trouble").setup()
 
 " END
