@@ -264,6 +264,7 @@ $ newgrp docker
 
 ```bash
 sudo nano /etc/default/grub
+sudo nano /boot/loader/entries/***linux.conf
 ```
 
 Na linha:
