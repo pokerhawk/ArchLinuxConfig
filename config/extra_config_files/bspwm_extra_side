@@ -1,5 +1,0 @@
-alttab &
-lxappearance &
-sleep 2
-killall -q lxappearance
-

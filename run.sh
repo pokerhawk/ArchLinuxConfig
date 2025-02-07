@@ -1,5 +1,8 @@
 #!/bin/bash
 
+REPO_DIR = sudo find /home/$USER -iname "ArchLinuxConfig" | grep -a1 /
+NUMBER_OF_MONITORS=$(xrandr|grep " connected" | awk '{print $1}' | wc -l)
+
 # INSTALANDO WINDOW MANAGER
 clear
 echo -e "\n\n\n"
@@ -140,7 +143,7 @@ fi
 
 # MOVENDO XINIT
 clear
-cp -v ../xinit-bashrc/bspwm/.xinitrc ~/.xinitrc
+cp -v $REPO_DIR/config/xinit/.xinitrc ~/.xinitrc
 
 #BSPWM
 mkdir ~/.config
@@ -149,32 +152,25 @@ clear
 echo -e "\n\n\n"
 echo "**************************************************"
 echo "Configurando BSPWM"
-echo "Escolha 1 opção de configuração: (Opção padrão => 1)"
-echo -e " 1. Configuração padrão (Recomendada) \n 2. Configuração para seu PC (2 telas) \n 3. Configuração para notbook"
 echo "**************************************************"
 echo -e "\n\n\n"
-echo "Qual opção? [1/2/3]"
-read bspwmconfig
-if [ $bspwmconfig == "1" ]; then
-	sudo cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
-	sleep 1
-	echo "~/.fehbg" >> ~/.config/bspwm/bspwmrc
-elif [ $bspwmconfig == "2" ]; then
-	sudo cp -v ../config/bspwm/bspwmrc_config_2_screen ~/.config/bspwm/bspwmrc
-	sudo cp -v -r ../config/screenlayout ~/.screenlayout
-elif [ $bspwmconfig == "3" ];then
-	sudo cp -v ../config/bspwm/bspwmrc_notebook ~/.config/bspwm/bspwmrc
-fi
+
+echo $REPO_DIR
+chmod +x $REPO_DIR/config/bspwm/build_bspwm_file.sh
+bash $REPO_DIR/config/bspwm/build_bspwm_file.sh
+mv -v $REPO_DIR/config/bspwm/bspwmrc ~/.config/bspwm
 
 #SXHKD
 clear
 mkdir ~/.config/sxhkd
-cp -r -v ../config/sxhkd/sxhkdrc ~/.config/sxhkd
+cp -r -v $REPO_DIR/config/sxhkd/sxhkdrc ~/.config/sxhkd
 clear
 
 #WALLPAPER, THEME AND PICOM ON MOCP
-cp -r -v ../img/ ~/Pictures/
+cp -r -v $REPO_DIR/img/ ~/Pictures/
+touch ~/.fehbg
 clear
+
 echo -e "\n\n\n"
 echo "**************************************************"
 echo "Configurando FEH background"
@@ -185,15 +181,23 @@ echo "--------------------------------------------------"
 ls ~/Pictures/
 echo "--------------------------------------------------"
 echo -e "\n\nExamplo de comando: feh --bg-fill '~/Pictures/kaylesideansty.jpg' --bg-scale '~/Pictures/jap_alphabet.jpg'\n"
-echo -e "Escolha um wallpaper: (Ex.: jap_alphabet.jpg)\n"
 
-read WALLPAPER
-echo "feh --bg-fill '$USER/Pictures/$WALLPAPER'" >> ~/.fehbg
+if [ $NUMBER_OF_MONITORS -eq 2 ]; then
+	echo -e "Escolha um wallpaper para o monitor principal: (Ex.: kaylesideansty.jpg)\n"
+	read WALLPAPER_1
+	echo -e "Escolha um wallpaper para o monitor secundario: (Ex.: jap_alphabet.jpg)\n"
+	read WALLPAPER_2
+	echo -e "#!/bin/sh\nfeh --bg-fill '/home/$USER/Pictures/$WALLPAPER_1' '/home/$USER/Pictures/WALLPAPER_2'" >> ~/.fehbg
+else
+	echo -e "Escolha um wallpaper: (Ex.: kaylesideansty.jpg)\n"
+	read WALLPAPER
+	echo -e "#!/bin/sh\nfeh --bg-fill /home/$USER/Pictures/$WALLPAPER" >> ~/.fehbg
+fi
 sudo chmod 754 ~/.fehbg #  4 = r(Read)  //  2 = w(Write)  //  1 = x(eXecute)
 clear
 
 if [[ -f "/home/pk/.moc/config" ]]; then
-	cp -v ../config/moc/config ~/.moc/
+	cp -v $REPO_DIR/config/moc/config ~/.moc/
 	#cp /usr/share/doc/moc/config.example ~/.moc/config
 	#echo "XTermTheme = transparent-background" >> ~/.moc/config
 fi
@@ -204,65 +208,49 @@ echo "**************************************************"
 echo "Adicionando Themes/Icons"
 echo "**************************************************"
 echo -e "\n\n\n"
-sudo cp -r -v ../Adwaita-dark /usr/share/themes/
-sudo cp -r -v ../Sweet-cursors /usr/share/icons/
+sudo cp -r -v $REPO_DIR/Adwaita-dark /usr/share/themes/
+sudo cp -r -v $REPO_DIR/Sweet-cursors /usr/share/icons/
 
 #PICOM (blur background)
 
-cp -r -v ../config/picom ~/.config
+cp -r -v $REPO_DIR/config/picom ~/.config
 
 #BASHRC personalizado
 
-clear
-echo -e "\n\n\n"
-echo "**************************************************"
-echo -e "BASHRC personalizado \nTerminal com cores e neofetch/lolcat"
-echo "**************************************************"
-echo -e "\n\n\n"
-echo "bashrc personalizado? [Y/n](Recomendado)"
-read bashrc
-if [ $bashrc == "y" ]||[ $bashrc == "Y" ]||[ -z "$bashrc" ]; then
-	clear
-	cp -v ../xinit-bashrc/.bashrc ~/
-	clear
-fi
+cp -v $REPO_DIR/config/xinit/.bashrc ~/
 
 #CONFIG FILES:
 
 mkdir ~/.config/polybar
 echo -e "\n\n\n"
 echo "**************************************************"
-echo -e "Configuração para polybar: \n 1. Configuração Padrão(Recomendado) \n 2. Configuração do seu PC (2 telas)"
+echo -e "Configurando polybar"
 echo "**************************************************"
 echo -e "\n\n\n"
-echo -e "Escolha uma opção: [1/2]"
-read POLYBAR_ANSWER
-if [ $POLYBAR_ANSWER == "1" ];then
-	cp -v ../config/polybar/config_side.ini ~/.config/polybar/config.ini
-	cp -v ../config/polybar/launch_side.sh ~/.config/polybar/launch.sh
-	cp -r -v ../config/nvim/ ~/.config/
-	mkdir ~/.config/extra_config_files
-	cp -v ../config/extra_config_files/bspwm_smart_move ~/.config/extra_config_files/
-	cp -v ../config/extra_config_files/bspwm_extra_side ~/.config/extra_config_files/
-	cp -v ../config/extra_config_files/bspwm_extra_exec ~/.config/extra_config_files/
-	chmod +x ~/.config/extra_config_files/bspwm_extra_side
-elif [ $POLYBAR_ANSWER == "2" ];then
-	cp -v ../config/polybar/config.ini ~/.config/polybar
-	cp -v ../config/polybar/launch.sh ~/.config/polybar
-	cp -r -v ../config/nvim/ ~/.config/
-	mkdir ~/.config/extra_config_files
-	cp -v ../config/extra_config_files/bspwm_smart_move ~/.config/extra_config_files/
-	cp -v ../config/extra_config_files/bspwm_extra_exec ~/.config/extra_config_files/
-	cp -v ../config/extra_config_files/bspwm_extra_side ~/.config/extra_config_files/
-	chmod +x ~/.config/extra_config_files/bspwm_smart_move
-	chmod +x ~/.config/extra_config_files/bspwm_extra_exec
+
+mkdir $REPO_DIR/config/extra_config_files
+cp -r -v $REPO_DIR/config/nvim/ ~/.config/
+
+cp -v $REPO_DIR/config/extra_config_files/bspwm_smart_move ~/.config/extra_config_files/
+chmod +x $REPO_DIR/config/extra_config_files/bspwm_extra_side
+
+mkdir ~/.mouse
+cp -v $REPO_DIR/config/mouse/xinput_set_mouse_speed.sh ~/.mouse/set_speed.sh
+chmod +x ~/.mouse/set_speed.sh
+
+if [ $NUMBER_OF_MONITORS -eq 1 ]; then
+	cp -v $REPO_DIR/config/polybar/config_side.ini ~/.config/polybar/config.ini
+	cp -v $REPO_DIR/config/polybar/launch_side.sh ~/.config/polybar/launch.sh
+else
+	cp -v $REPO_DIR/config/polybar/config.ini ~/.config/polybar
+	cp -v $REPO_DIR/config/polybar/launch.sh ~/.config/polybar
 fi
 clear
 
 #ALACRITTY config
 
 if [ -f "/usr/bin/alacritty" ]; then 
-	cp -r -v ../config/alacritty ~/.config/
+	cp -r -v $REPO_DIR/config/alacritty ~/.config/
 fi
 clear
 

@@ -1,6 +1,4 @@
-#
 # ~/.bashrc
-#
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	startx
@@ -8,7 +6,6 @@ fi
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
 
 #\d	current date
 #\e	escape character
@@ -20,11 +17,16 @@ fi
 #\u	username of current user
 #\w	path to current working directory
 
-alias vim='nvim'
-alias vi='nvim ./'
 alias token='cat /home/$USER/Documents/token | xclip -selection clipboard'
 alias ll='ls -o --color=auto'
 alias ls='ls --color=auto'
+
+export PATH=$PATH:/opt/rocm/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rocm/lib:/opt/rocm/hip/lib
+export HIP_PLATFORM=amd
+export HIP_PATH=/opt/rocm/hip
+export CPATH=/opt/rocm/include
+export ROCM_PATH=/opt/rocm
 
 #PS1=' \u@\h in \W \n -\$ '
 PS1='\[\e[35m\]╭─(\u\[\e[96m\]@\[\e[35m\]\h)\[\e[96m\] at\[\e[34m\] \W/\e[35m\]\n╰─\$ \[\e[00m\]'
