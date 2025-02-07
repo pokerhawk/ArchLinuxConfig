@@ -2,6 +2,7 @@
 
 REPO_DIR = sudo find /home/$USER -iname "ArchLinuxConfig" | grep -a1 /
 NUMBER_OF_MONITORS=$(xrandr|grep " connected" | awk '{print $1}' | wc -l)
+SECOND_MONITOR=$(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f6 | awk 'NR==2')
 
 # INSTALANDO WINDOW MANAGER
 clear
@@ -221,7 +222,6 @@ cp -v $REPO_DIR/config/xinit/.bashrc ~/
 
 #CONFIG FILES:
 
-mkdir ~/.config/polybar
 echo -e "\n\n\n"
 echo "**************************************************"
 echo -e "Configurando polybar"
@@ -238,12 +238,15 @@ mkdir ~/.mouse
 cp -v $REPO_DIR/config/mouse/xinput_set_mouse_speed.sh ~/.mouse/set_speed.sh
 chmod +x ~/.mouse/set_speed.sh
 
+mkdir ~/.config/polybar
+
 if [ $NUMBER_OF_MONITORS -eq 1 ]; then
 	cp -v $REPO_DIR/config/polybar/config_side.ini ~/.config/polybar/config.ini
 	cp -v $REPO_DIR/config/polybar/launch_side.sh ~/.config/polybar/launch.sh
 else
 	cp -v $REPO_DIR/config/polybar/config.ini ~/.config/polybar
 	cp -v $REPO_DIR/config/polybar/launch.sh ~/.config/polybar
+	sed -i "/\[bar\/secondary\]/a monitor = $SECOND_MONITOR" config.ini
 fi
 clear
 

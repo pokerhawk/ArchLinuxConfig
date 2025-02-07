@@ -4,7 +4,7 @@
 # If all your bars have ipc enabled, you can use
 polybar-msg cmd quit
 # Otherwise you can use the nuclear option:
-# killall -q polybar
+killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 # Launch bar1 and bar2
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
@@ -19,11 +19,12 @@ if [[ $(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f4 | cut -
 else
   primary=$(xrandr --query | grep " connected" | cut -d" " -f1 | grep -m1 "")
 
+
   for m in $screens; do
     if [[ $primary == $m ]]; then
-        MONITOR=$m TRAY_POS=right polybar main &
+        MONITOR=$m polybar main &
     else
-        MONITOR=$m TRAY_POS=none polybar secondary &
+        MONITOR=$m polybar secondary &
     fi
   done
 fi
