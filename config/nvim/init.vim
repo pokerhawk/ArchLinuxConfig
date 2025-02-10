@@ -48,15 +48,25 @@ call plug#begin()
 	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " add indent line
 	Plug 'https://github.com/styled-components/vim-styled-components', { 'branch': 'main' } " syntax and auto completion for styled components
 	Plug 'https://github.com/mrcjkb/rustaceanvim' " Rust LSP (requires rust-analyzer on Mason)
-	" AUTO COMPLETION LSP:
+	Plug 'https://github.com/akinsho/toggleterm.nvim.git'
+	" MASON:
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
-	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
-	Plug 'https://github.com/neovim/nvim-lspconfig.git'
+
 	Plug 'https://github.com/hrsh7th/nvim-cmp'
 	Plug 'https://github.com/hrsh7th/cmp-nvim-lsp'
 	Plug 'https://github.com/L3MON4D3/LuaSnip'
+	" Default config for LSPs:
 	Plug 'https://github.com/VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
-	Plug 'https://github.com/akinsho/toggleterm.nvim.git'
+	" LSP:
+	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
+	Plug 'https://github.com/neovim/nvim-lspconfig.git'
+	" DAP:
+	Plug 'https://github.com/mfussenegger/nvim-dap.git'
+	Plug 'https://github.com/rcarriga/nvim-dap-ui.git'
+	" LINTERS:
+	Plug 'https://github.com/mfussenegger/nvim-lint.git'
+	" FORMATERS:
+	Plug 'https://github.com/mhartington/formatter.nvim.git'
 call plug#end()
 
 " MAN MAP
