@@ -21,7 +21,6 @@ let maplocalleader = ' '
 "PLUGINS:
 
 call plug#begin()
-
 	Plug 'https://github.com/vim-airline/vim-airline.git' " that bar at the botton
 	Plug 'https://github.com/preservim/nerdtree.git' " the TREE accessed with Control+t
 	Plug 'https://github.com/tpope/vim-commentary.git' " quick keybind to comment -> gcc
@@ -47,6 +46,8 @@ call plug#begin()
 	Plug 'https://github.com/nvim-tree/nvim-web-devicons.git' "dep for something
 	"Plug 'https://github.com/dense-analysis/ale' " syntax and semantic error correction
 	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " add indent line
+	Plug 'https://github.com/styled-components/vim-styled-components', { 'branch': 'main' } " syntax and auto completion for styled components
+	Plug 'https://github.com/mrcjkb/rustaceanvim' " Rust LSP (requires rust-analyzer on Mason)
 	" AUTO COMPLETION LSP:
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
 	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
@@ -56,7 +57,6 @@ call plug#begin()
 	Plug 'https://github.com/L3MON4D3/LuaSnip'
 	Plug 'https://github.com/VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 	Plug 'https://github.com/akinsho/toggleterm.nvim.git'
-
 call plug#end()
 
 " MAN MAP
@@ -157,6 +157,8 @@ vmap <S-k> <Up>
 vmap <S-j> <Down>
 vmap <S-h> <Left>
 vmap <S-l> <Right>
+
+nmap <silent><Leader>s :vsp<CR><C-]>
 
 " let g:user_emmet_leader_key=','
 let g:NERDTreeDirArrowExpandable="+"
