@@ -257,6 +257,9 @@ if [ -f "/usr/bin/alacritty" ]; then
 fi
 clear
 
+cd /home/$USER
+ctags -R --exclude=.git --exclude=node_modules --exclude=build --exclude=dist --exclude=*.min.js .
+
 #FIM
 clear
 echo -e "\n\n\n"
