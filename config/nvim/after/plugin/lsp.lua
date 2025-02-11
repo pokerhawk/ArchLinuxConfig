@@ -8,12 +8,13 @@ require("mason").setup({
     }
   }
 })
-require("mason-lspconfig").setup()
-
-local lspconfig = require("lspconfig")
+require("mason-lspconfig").setup({
+    ensure_installed = {}
+})
 
 local lsp = require('lsp-zero').preset({})
 local cmp = require("cmp")
+local lspconfig = require("lspconfig")
 
 -- LSP CONFIGURATION
 lsp.on_attach(function(client, bufnr)
@@ -21,7 +22,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- (Optional) Configure lua language server for neovim
--- lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 lspconfig.clangd.setup{
   -- flags = {
   --   debounce_text_changes = 150,
@@ -52,6 +53,8 @@ lsp.ensure_installed({
   'prettier',
 })
 
+lsp.setup()
+
 -- CMP CONFIGURATION
 
 cmp.setup({
@@ -75,7 +78,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- For luasnip users.
+    -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
