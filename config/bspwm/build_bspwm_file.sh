@@ -79,14 +79,9 @@ echo -e "\n
 
 /usr/bin/numlockx on &
 /usr/bin/polkit-dumb-agent &
-xsetroot -cursor_name Sweet-cursors &
-lxappearance &
-sleep 1
-killall -q lxappearance &
 bash /home/$USER/.mouse/set_speed.sh &
 bash /home/$USER/.config/polybar/launch.sh &
 bash /home/$USER/.screenlayout/monitor-setup.sh &
-bash /home/$USER/.config/extra_config_files/bspwm_extra_exec &
 bash /home/$USER/.fehbg &
 picom &
 alttab &
