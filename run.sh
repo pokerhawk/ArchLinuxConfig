@@ -253,7 +253,8 @@ clear
 #ALACRITTY config
 
 if [ -f "/usr/bin/alacritty" ]; then 
-	cp -r -v $REPO_DIR/config/alacritty ~/.config/
+	mkdir /home/$USER/.config/alacritty
+	cp -v $REPO_DIR/config/alacritty/alacritty.toml ~/.config/alacritty/
 fi
 clear
 

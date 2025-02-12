@@ -1,7 +1,7 @@
 #unfocused_hollow = true
 
 [colors]
-transparent_background_colors = true
+#transparent_background_colors = true
 
 [colors.bright]
 black = "#666666"
@@ -77,3 +77,7 @@ mods = "Shift|Control"
 
 [window]
 opacity = 0.7
+
+[env]
+XCURSOR_SIZE = "20"
+
