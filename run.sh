@@ -12,10 +12,22 @@ echo "Instalando WM(Window Manager) + programas padrões"
 echo "**************************************************"
 echo -e "\n\n\n"
 
-sudo pacman -Syu
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire xf86-input-synaptics
-sudo pacman -S --needed base-devel
-clear
+echo "Este dispositivo é um PC ou notebook? [PC/note]"
+read is_notebook
+
+if [ $is_notebook == "PC" ];then
+	sudo pacman -Syu
+	sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire
+	sudo pacman -S --needed base-devel
+	clear
+else
+	sudo pacman -Syu
+	sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire xf86-input-synaptics
+	sudo pacman -S --needed base-devel
+	cp -v $REPO_DIR/config/touchpad/40-synaptics.conf /etc/X11/xorg.conf.d/
+	clear
+fi
+
 
 echo -e "\n\n\n"
 echo "**************************************************"
