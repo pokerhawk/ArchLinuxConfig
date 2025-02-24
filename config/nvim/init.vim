@@ -26,11 +26,9 @@ call plug#begin()
 	Plug 'https://github.com/tpope/vim-commentary.git' " quick keybind to comment -> gcc
 	Plug 'https://github.com/preservim/tagbar.git' " to see all arguments and locate them // dep -> ctags (pacman -S ctags)
 	Plug 'https://github.com/ryanoasis/vim-devicons' " icons for the TREE
-
 	" Color Schemes
 	Plug 'https://github.com/tanvirtin/monokai.nvim.git' " monokai colorscheme theme
 	Plug 'https://github.com/polirritmico/monokai-nightasty.nvim.git' " monokai-nightasty colorscheme
-
 	Plug 'https://github.com/lukas-reineke/indent-blankline.nvim.git' " give lines that connect the brackets (easier to see)
 	Plug 'https://github.com/junegunn/rainbow_parentheses.vim.git' " give brackets matching colors
 	Plug 'https://github.com/sheerun/vim-polyglot.git' " syntax highlighting
@@ -51,6 +49,7 @@ call plug#begin()
 	Plug 'https://github.com/akinsho/toggleterm.nvim.git'
 	" MASON:
 	Plug 'https://github.com/williamboman/mason.nvim.git', { 'do': ':MasonUpdate' }
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 	Plug 'https://github.com/hrsh7th/nvim-cmp'
 	Plug 'https://github.com/hrsh7th/cmp-nvim-lsp'
@@ -100,7 +99,6 @@ nnoremap <leader>tt <cmd>Telescope live_grep<CR>
 nnoremap <leader>tb <cmd>Telescope buffers<CR>
 nnoremap <leader>th <cmd>Telescope help_tags<CR>
 nnoremap <expr> <leader>fd ':Telescope find_files<cr>' . expand('<cword>')
-
 nnoremap <expr> <leader>ff ':Telescope live_grep<cr>' . expand('<cword>')
 
 " HARPOON
@@ -176,6 +174,8 @@ let g:NERDTreeDirArrowCollapsible="~"
 
 " SYNTAX(COLOR) AND COLORSCHEME:
 
+filetype on
+filetype plugin indent on
 syntax on
 " colorscheme monokai
 " colorscheme monokai_pro
@@ -184,5 +184,5 @@ syntax on
 :colorscheme monokai-nightasty
 :lua require("ibl").setup()
 :lua require("trouble").setup()
-
+au BufRead,BufNewFile *.prisma set filetype=prisma
 " END
