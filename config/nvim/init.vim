@@ -87,6 +87,9 @@ nnoremap <leader><leader>r :source $MYVIMRC<CR>
 
 " Command to replace a instance word then find other instances with dot (.)
 nnoremap <silent> <C-Tab> :let @/=expand('<cword>')<cr>cgn
+nnoremap <silent> <leader> <C-Tab> :let @/=expand('<cWORD>')<CR>cgn
+vnoremap <leader>r y:let @/=@0<CR>cgn
+
 " nnoremap <C-]><cmd>:horizontal stag <cword><CR>
 
 " Substitui todas as palavras iguais:
