@@ -13,11 +13,11 @@ echo "**************************************************"
 echo -e "\n\n\n"
 
 echo "Este dispositivo é um PC ou notebook? [PC/note]"
-read is_notebook
+read hardware_type
 
-if [ $is_notebook == "PC" ];then
+if [ $hardware_type == "PC" ];then
 	sudo pacman -Syu
-	sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire
+	sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire lib32-libnm lib32-libgudev
 	sudo pacman -S --needed base-devel
 	clear
 else
