@@ -17,14 +17,14 @@ index=0
 if [ $number_of_lines -eq 2 ]; then
 	for line in $connected_monitors; do
 		if [ $index -eq 0 ]; then
-			echo -e "bspc $line -d I II III IV V VI VII" >> bspwmrc
+			echo -e "bspc monitor $line -d I II III IV V VI VII" >> bspwmrc
 		else
-			echo -e "bspc $line -d VIII IX X" >> bspwmrc
+			echo -e "bspc monitor $line -d VIII IX X" >> bspwmrc
 		fi
 		((index++))
 	done
 else
-	echo -e "bspc $connected_monitors -d I II III IV V VI VII VIII IX X"
+	echo -e "bspc monitor $connected_monitors -d I II III IV V VI VII VIII IX X"
 fi
 
 ## BULK of config and rules
