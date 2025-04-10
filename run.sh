@@ -15,7 +15,7 @@ echo -e "\n\n\n"
 echo "Este dispositivo é um PC ou notebook? [PC/note]"
 read HARDWARE
 
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire ripgrep
 
 if [ $HARDWARE == "PC" ];then
 	sudo pacman -S lib32-libnm lib32-libgudev #has to uncomment multilib for this package to download
