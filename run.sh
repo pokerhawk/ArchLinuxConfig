@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO_DIR = sudo find /home/$USER -iname "ArchLinuxConfig" | grep -a1 /
+REPO_DIR=$(sudo find /home/$USER -iname "ArchLinuxConfig" | grep -a1 /)
 NUMBER_OF_MONITORS=$(xrandr|grep " connected" | awk '{print $1}' | wc -l)
 SECOND_MONITOR=$(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f6 | awk 'NR==2')
 
@@ -13,16 +13,18 @@ echo "**************************************************"
 echo -e "\n\n\n"
 
 echo "Este dispositivo é um PC ou notebook? [PC/note]"
-read hardware_type
+read HARDWARE
 
-if [ $hardware_type == "PC" ];then
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire
+
+if [ $HARDWARE == "PC" ];then
+	sudo pacman -S lib32-libnm lib32-libgudev #has to uncomment multilib for this package to download
 	sudo pacman -Syu
-	sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire lib32-libnm lib32-libgudev
 	sudo pacman -S --needed base-devel
 	clear
 else
 	sudo pacman -Syu
-	sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire xf86-input-synaptics
+	sudo pacman -S xf86-input-synaptics
 	sudo pacman -S --needed base-devel
 	cp -v $REPO_DIR/config/touchpad/40-synaptics.conf /etc/X11/xorg.conf.d/
 	clear
@@ -35,7 +37,7 @@ echo "Instalando fontes + libs (Recomendado)"
 echo "**************************************************"
 echo -e "\n\n\n"
 
-sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk ttf-font-awesome
+sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk ttf-font-awesome adobe-source-code-pro-fonts
 clear
 
 echo -e "\n\n\nNerd Fonts (BIG):\n\n\n"
@@ -124,7 +126,7 @@ if [ -f "/usr/bin/chromium" ]; then
 	echo "Chromium Installed"
 	echo "**************************************************"
 	echo -e "\n\n\n"
-	sleep 3
+	sleep 1
 	clear
 else
 	clear

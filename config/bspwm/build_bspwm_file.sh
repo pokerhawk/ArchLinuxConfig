@@ -1,4 +1,5 @@
-rm bspwmrc
+## create condition if bspwmrc exists delete it
+export DISPLAY=:0
 touch ./bspwmrc
 echo -e "#!/bin/sh\n" >> bspwmrc
 echo -e "pgrep -x sxhkd > /dev/null || sxhkd &\n" >> bspwmrc
@@ -77,6 +78,7 @@ bspc rule -a Lxappearance desktop='^8'
 echo -e "\n
 ## ADDED CONFIGS ##
 
+sxhkd &
 /usr/bin/numlockx on &
 /usr/bin/polkit-dumb-agent &
 bash /home/$USER/.mouse/set_speed.sh &
@@ -88,3 +90,5 @@ alttab &
 discord &
 dunst &
 " >> bspwmrc
+
+chmod +x bspwmrc
