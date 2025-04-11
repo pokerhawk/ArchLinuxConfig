@@ -58,8 +58,9 @@ if [ !$new_swappiness_value == "no" ]; then
 fi
 
 #Installing packages
-
-sudo pacman -S go git moc alsa-utils pulseaudio-alsa nano-syntax-highlighting unrar vlc mpv steam wine winetricks lutris tree
+sudo pacman -S lib32-libnm lib32-libgudev
+sudo pacman -S alsa-utils pulseaudio-alsa nano-syntax-highlighting unrar vlc mpv steam wine winetricks lutris tree
+# yay -S moc
 
 #installing yay/vscode
 

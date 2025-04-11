@@ -15,10 +15,10 @@ echo -e "\n\n\n"
 echo "Este dispositivo é um PC ou notebook? [PC/note]"
 read HARDWARE
 
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd nano rofi bpytop htop ranger polybar feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx alacritty xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire ripgrep
+sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd polybar alacritty
+sudo pacman -S nano rofi bpytop htop ranger feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire ripgrep go git
 
 if [ $HARDWARE == "PC" ];then
-	sudo pacman -S lib32-libnm lib32-libgudev #has to uncomment multilib for this package to download
 	sudo pacman -Syu
 	sudo pacman -S --needed base-devel
 	clear
@@ -211,6 +211,7 @@ fi
 sudo chmod 754 ~/.fehbg #  4 = r(Read)  //  2 = w(Write)  //  1 = x(eXecute)
 clear
 
+# MOCP config yay -S moc
 if [[ -f "/home/pk/.moc/config" ]]; then
 	cp -v $REPO_DIR/config/moc/config ~/.moc/
 	#cp /usr/share/doc/moc/config.example ~/.moc/config
