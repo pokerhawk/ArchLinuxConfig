@@ -59,7 +59,7 @@ echo "INSTALLING LOLCAT"
 echo "**************************************************"
 echo -e "\n\n\n"
 
-sudo pacman -S lolcat
+sudo pacman -S lolcat ruby rubygems
 clear
 
 #IF conditions

@@ -51,11 +51,4 @@ grub-mkconfig -o /boot/grub/grub.cfg (this command for both efi and non-efi)
 exit
 reboot
 
-
-
-
-
-
-
-
 ### DONE ###
