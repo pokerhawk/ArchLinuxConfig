@@ -60,6 +60,7 @@ fi
 #Installing packages
 sudo pacman -S lib32-libnm lib32-libgudev
 sudo pacman -S alsa-utils pulseaudio-alsa nano-syntax-highlighting unrar vlc mpv steam wine winetricks lutris tree
+sudo pacman -S linux-firmware-qlogic
 # yay -S moc
 
 #installing yay/vscode
@@ -75,6 +76,9 @@ if [ $vscode_answer == "Y" ]||[ $vscode_answer == "y" ]||[ -z "$vscode_answer" ]
     clear
     yay -S visual-studio-code-bin
 fi
+
+#Installing Yay firmware
+yay -S ast-firmware wd719x-firmware aic94xx-firmware upd72020x-fw
 
 #Config Bluetooth
 
