@@ -108,3 +108,10 @@ fi
 #Setting time
 sudo ntpd -qg
 sudo hwclock --systohc
+
+clear
+lspci
+echo -e"\n\n\n !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! "
+echo -e "\n***Copy the contents of this output and check with chatGPT for any unsuported modules***\n\nThe end... Closing in 10 seconds..."
+
+sleep 10
