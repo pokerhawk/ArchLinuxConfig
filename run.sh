@@ -16,7 +16,7 @@ echo "Este dispositivo é um PC ou notebook? [PC/note]"
 read HARDWARE
 
 sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd polybar alacritty
-sudo pacman -S nano rofi bpytop htop ranger feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire ripgrep go git
+sudo pacman -S nano rofi bpytop htop ranger feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm pipewire ripgrep go git gvfs-mtp gvfs-gphoto2
 
 if [ $HARDWARE == "PC" ];then
 	sudo pacman -Syu
