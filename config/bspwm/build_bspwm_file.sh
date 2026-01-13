@@ -77,7 +77,8 @@ bspc rule -a Lxappearance desktop='^8'
 
 echo -e "\n
 ## ADDED CONFIGS ##
-
+Xcursor.theme: Sweet-cursors &
+Xcursor.size: 24 &
 sxhkd &
 /usr/bin/numlockx on &
 /usr/bin/polkit-dumb-agent &
