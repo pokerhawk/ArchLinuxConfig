@@ -94,3 +94,4 @@ dunst &
 " >> bspwmrc
 
 chmod +x bspwmrc
+chmod +w bspwmrc
