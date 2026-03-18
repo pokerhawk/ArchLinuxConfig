@@ -1,8 +1,9 @@
 ## create condition if bspwmrc exists delete it
 export DISPLAY=:0
-touch ./bspwmrc
-echo -e "#!/bin/sh\n" >> bspwmrc
-echo -e "pgrep -x sxhkd > /dev/null || sxhkd &\n" >> bspwmrc
+mkdir /home/$USER/.config/bspwm
+touch /home/$USER/.config/bspwm/bspwmrc
+echo -e "#!/bin/sh\n" >> /home/$USER/.config/bspwm/bspwmrc
+echo -e "pgrep -x sxhkd > /dev/null || sxhkd &\n" >> /home/$USER/.config/bspwm/bspwmrc
 
 # xrandr|grep " connected" | awk '{print $1}' | while read -r line; do
 # 	echo $line

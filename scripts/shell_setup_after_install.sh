@@ -33,12 +33,6 @@ rofi-theme-selector
 echo "Rofi Theme selected"
 clear
 
-echo -e "Uncomment:\n#[multilib]\n#Include = /etc/pacman.d/mirrorlist\nthen exit"
-sleep 5
-sudo nano /etc/pacman.conf
-sudo pacman -Sy
-clear
-
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 sleep 7
@@ -79,6 +73,7 @@ fi
 
 #Installing Yay firmware
 yay -S ast-firmware wd719x-firmware aic94xx-firmware upd72020x-fw
+# yay -S neofetch leafpad
 
 #Config Bluetooth
 

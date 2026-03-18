@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Enable Multilib
+echo -e "Uncomment:\n#[multilib]\n#Include = /etc/pacman.d/mirrorlist\nthen exit"
+sleep 5
+sudo nano /etc/pacman.conf
+sudo pacman -Syy
+sudo pacman -S xrandr
+clear
+
 REPO_DIR=$(sudo find /home/$USER -iname "ArchLinuxConfig" | grep -a1 /)
 NUMBER_OF_MONITORS=$(xrandr|grep " connected" | awk '{print $1}' | wc -l)
 SECOND_MONITOR=$(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f6 | awk 'NR==2')
@@ -15,8 +23,14 @@ echo -e "\n\n\n"
 echo "Este dispositivo é um PC ou notebook? [PC/note]"
 read HARDWARE
 
-sudo pacman -S xorg xorg-xinit xorg-xsetroot bspwm sxhkd polybar alacritty
-sudo pacman -S nano rofi bpytop htop ranger feh neofetch leafpad picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm ripgrep go git gvfs-mtp gvfs-gphoto2 pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack
+# Check if package exists then install
+for pkg in xorg xorg-xinit xorg-xsetroot bspwm sxhkd polybar alacritty; do
+    sudo pacman -S --noconfirm "$pkg" || echo "Skipping $pkg"
+done
+
+for pkg in nano rofi bpytop htop ranger feh picom ffmpegthumbnailer maim xclip slock ctags gucharmap pulseaudio pavucontrol lxappearance numlockx xbindkeys polkit dunst font-manager linux-headers dkms viewnior kolourpaint ntp jq unzip npm ripgrep go git gvfs-mtp gvfs-gphoto2 pipewire wireplumber pipewire-alsa pipewire-jack; do
+    sudo pacman -S --noconfirm "$pkg" || echo "Skipping $pkg"
+done
 
 if [ $HARDWARE == "PC" ];then
 	sudo pacman -Syu
@@ -30,14 +44,16 @@ else
 	clear
 fi
 
-
 echo -e "\n\n\n"
 echo "**************************************************"
 echo "Instalando fontes + libs (Recomendado)"
 echo "**************************************************"
 echo -e "\n\n\n"
 
-sudo pacman -S sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk ttf-font-awesome adobe-source-code-pro-fonts
+# Check if pkg exists and install
+for pkg in sndio portaudio wavpack noto-fonts noto-fonts-emoji noto-fonts-extra ttf-liberation adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk ttf-font-awesome adobe-source-code-pro-fonts; do
+	sudo pacman -S --noconfirm "$pkg" || echo "Skipping $pkg"
+done
 
 clear
 
