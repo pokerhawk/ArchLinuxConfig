@@ -9,24 +9,29 @@ echo -e "pgrep -x sxhkd > /dev/null || sxhkd &\n" >> /home/$USER/.config/bspwm/b
 # 	echo $line
 # done
 
-## For now only 2 monitors logic
+## For now only 2 monitors logic - LOGIC NOT WORKING FIX (monitors only show after bspwm executes)
+## ----------------------------------------------------------------------------------------------- ##
 
-connected_monitors=$(xrandr|grep " connected" | awk '{print $1}')
-number_of_lines=$(xrandr|grep " connected" | awk '{print $1}' | wc -l)
-index=0
+# connected_monitors=$(xrandr|grep " connected" | awk '{print $1}')
+# number_of_lines=$(xrandr|grep " connected" | awk '{print $1}' | wc -l)
+# index=0
 
-if [ $number_of_lines -eq 2 ]; then
-	for line in $connected_monitors; do
-		if [ $index -eq 0 ]; then
-			echo -e "bspc monitor $line -d I II III IV V VI VII" >> bspwmrc
-		else
-			echo -e "bspc monitor $line -d VIII IX X" >> bspwmrc
-		fi
-		((index++))
-	done
-else
-	echo -e "bspc monitor $connected_monitors -d I II III IV V VI VII VIII IX X"
-fi
+# if [ $number_of_lines -eq 2 ]; then
+# 	for line in $connected_monitors; do
+# 		if [ $index -eq 0 ]; then
+# 			echo -e "bspc monitor $line -d I II III IV V VI VII" >> bspwmrc
+# 		else
+# 			echo -e "bspc monitor $line -d VIII IX X" >> bspwmrc
+# 		fi
+# 		((index++))
+# 	done
+# else
+# 	echo -e "bspc monitor $connected_monitors -d I II III IV V VI VII VIII IX X"
+# fi
+
+## ----------------------------------------------------------------------------------------------- ##
+
+echo -e "bspc monitor -d I II III IV V VI VII VIII IX X"
 
 ## BULK of config and rules
 
