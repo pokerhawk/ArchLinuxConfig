@@ -26,7 +26,7 @@ echo "\n\nWayland or X11? [W/X]"
 read WAY_OR_X
 
 if [ $WAY_OR_X == "W" ] || [ $WAY_OR_X == "w" ]; then
-	for pkg in hyprland wayland-protocols wlroots waybar wlogout xorg-xwayland polkit-gnome hyprlock hypridle hyprpaper mako grim slurp wl-clipboard imv nwg-look; do
+	for pkg in hyprland wayland-protocols wlroots waybar wlogout xorg-xwayland polkit-gnome hyprlock hypridle hyprpaper mako grim slurp wl-clipboard imv nwg-look xdg-desktop-portal-hyprland; do
 		sudo pacman -S --noconfirm "$pkg" || echo "Skipping $pkg"
 	done
 else
